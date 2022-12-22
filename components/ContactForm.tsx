@@ -1,26 +1,24 @@
 'use client';
 
-import { useId } from 'react';
+import React, { useId } from 'react';
 
 import { useFormik } from 'formik';
-import { z } from 'zod';
+
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
-import { string } from 'yup';
 
 interface FormData {
-	'form-name': 'contact';
-	firstName: String;
-	lastName: String;
-	email: String;
-	phone?: String;
-	message: String;
+	firstName: string;
+	lastName: string;
+	email: string;
+	phone?: string;
+	message: string;
 }
 
 const ContactForm = () => {
 	const id = useId();
 
-	const encode = (data: FormData) => {
+	const encode = (data: any) => {
 		return Object.keys(data)
 			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
 			.join('&');
@@ -46,30 +44,17 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				await fetch('/', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/x-www-form-urlencoded',
-					},
-					body: encode({
-						'form-name': 'contact',
-						...values,
-					}),
-				});
 			} catch (e) {
 				console.log(e);
 			}
 		},
 	});
 
-	const onSubmit = async (data: FormData) => {
+	const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		try {
-			await fetch('/contact.html', {
-				method: 'POST',
+			await fetch('/', {
 				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: encode({
-					...data,
-				}),
+				body: encode({ 'form-name': 'contact', ...event }),
 			});
 
 			resetForm();
