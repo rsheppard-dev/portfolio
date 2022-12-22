@@ -1,0 +1,46 @@
+import Image from 'next/image';
+import ContactForm from './ContactForm';
+
+const ContactSection = () => {
+	return (
+		<section className='container pt-16 pb-10 relative'>
+			<h2 className='mb-16 font-primary text-light font-bold text-4xl'>
+				Get in Touch
+			</h2>
+
+			<div className='flex flex-wrap gap-10 justify-between'>
+				<ContactForm />
+
+				<span className='hidden md:block flex-none bg-light w-[1px] min-h-full'></span>
+
+				<div className='grow flex flex-col gap-5'>
+					<div className='flex flex-col gap-1'>
+						<p className='font-secondary font-bold text-light'>Email:</p>
+						<p className='font-secondary text-primary-100'>
+							<a href='mailto:me@roysheppard.dev'>me@roysheppard.dev</a>
+						</p>
+					</div>
+
+					<div className='flex flex-col gap-1'>
+						<p className='font-secondary font-bold text-light'>Phone:</p>
+						<p className='font-secondary text-primary-100'>
+							<a href='tel:07883066944'>07883066944</a>
+						</p>
+					</div>
+
+					<div className='hidden xs:block absolute bottom-0 right-5 lg:right-20 xl:right-32'>
+						<div className='relative object-contain object-bottom w-[200px] h-[200px] lg:w-[220px] lg:h-[220px] xl:w-[250px] xl:h-[250px]'>
+							<Image
+								src='/img/roy-sheppard-contact.png'
+								alt='Roy Sheppard - Contact Me'
+								fill
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+export default ContactSection;
