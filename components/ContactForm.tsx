@@ -53,9 +53,9 @@ const ContactForm = () => {
 		<form
 			name='contact'
 			data-netlify='true'
-			action='/?sent=true'
 			onSubmit={handleSubmit}
 			netlify-honeypot='bot-field'
+			method='POST'
 			className='grow grid grid-cols-2 gap-5'
 		>
 			<input type='hidden' name='form-name' value='contact' />
