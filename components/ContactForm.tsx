@@ -44,6 +44,8 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
+				console.log(values);
+				resetForm();
 			} catch (e) {
 				console.log(e);
 			}
@@ -66,7 +68,7 @@ const ContactForm = () => {
 		<form
 			name='contact'
 			data-netlify='true'
-			action='POST'
+			action='/?sent=true'
 			onSubmit={handleSubmit}
 			netlify-honeypot='bot-field'
 			className='grow grid grid-cols-2 gap-5'
