@@ -3,12 +3,30 @@
 import { useId } from 'react';
 
 import { useFormik } from 'formik';
+import { z } from 'zod';
 
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
+const formData = z.object({
+	'form-name': z.string().default('contact'),
+	firstName: z.string().min(2),
+	lastName: z.string().min(2),
+	email: z.string().email(),
+	phone: z.string().optional(),
+	message: z.string().min(10),
+});
+
+type FormData = z.infer<typeof formData>;
+
 const ContactForm = () => {
 	const id = useId();
+
+	const encode = (data: FormData) => {
+		return Object.keys(data)
+			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+			.join('&');
+	};
 
 	const {
 		values,
@@ -18,6 +36,7 @@ const ContactForm = () => {
 		isSubmitting,
 		touched,
 		errors,
+		resetForm,
 	} = useFormik({
 		initialValues: {
 			firstName: '',
@@ -34,13 +53,32 @@ const ContactForm = () => {
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded',
 					},
-					body: new URLSearchParams(values).toString(),
+					body: encode({
+						'form-name': 'contact',
+						...values,
+					}),
 				});
 			} catch (e) {
 				console.log(e);
 			}
 		},
 	});
+
+	const onSubmit = async (data: FormData) => {
+		try {
+			await fetch('/contact.html', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: encode({
+					...data,
+				}),
+			});
+
+			resetForm();
+		} catch (e) {
+			console.log(e);
+		}
+	};
 	return (
 		<form
 			name='contact'
