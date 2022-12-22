@@ -4,20 +4,18 @@ import { useId } from 'react';
 
 import { useFormik } from 'formik';
 import { z } from 'zod';
-
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
+import { string } from 'yup';
 
-const formData = z.object({
-	'form-name': z.string().default('contact'),
-	firstName: z.string().min(2),
-	lastName: z.string().min(2),
-	email: z.string().email(),
-	phone: z.string().optional(),
-	message: z.string().min(10),
-});
-
-type FormData = z.infer<typeof formData>;
+interface FormData {
+	'form-name': 'contact';
+	firstName: String;
+	lastName: String;
+	email: String;
+	phone?: String;
+	message: String;
+}
 
 const ContactForm = () => {
 	const id = useId();
