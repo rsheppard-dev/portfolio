@@ -49,19 +49,6 @@ const ContactForm = () => {
 			}
 		},
 	});
-
-	const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		try {
-			await fetch('/', {
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: encode({ 'form-name': 'contact', ...event }),
-			});
-
-			resetForm();
-		} catch (e) {
-			console.log(e);
-		}
-	};
 	return (
 		<form
 			name='contact'
