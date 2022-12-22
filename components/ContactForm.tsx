@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
-interface FormData {
+interface ContactFormData {
 	firstName: string;
 	lastName: string;
 	email: string;
@@ -17,12 +17,6 @@ interface FormData {
 
 const ContactForm = () => {
 	const id = useId();
-
-	const encode = (data: any) => {
-		return Object.keys(data)
-			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-			.join('&');
-	};
 
 	const {
 		values,
@@ -44,7 +38,11 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				console.log(values);
+				await fetch('/contact.html', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: new URLSearchParams(values).toString(),
+				});
 				resetForm();
 			} catch (e) {
 				console.log(e);
@@ -82,7 +80,7 @@ const ContactForm = () => {
 				</label>
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col col-span-2 xs:col-span-1 gap-2'>
 				<FormLabel id={`${id}-firstName`} label='First Name' required={true} />
 				<input
 					id={`${id}-firstName`}
@@ -105,7 +103,7 @@ const ContactForm = () => {
 				) : null}
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-2 col-span-2 xs:col-span-1'>
 				<FormLabel id={`${id}-lastName`} label='Last Name' required={true} />
 				<input
 					id={`${id}-lastName`}
@@ -128,7 +126,7 @@ const ContactForm = () => {
 				) : null}
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-2 col-span-2 xs:col-span-1'>
 				<FormLabel id={`${id}-email`} label='Email' required={true} />
 				<input
 					id={`${id}-email`}
@@ -151,7 +149,7 @@ const ContactForm = () => {
 				) : null}
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-2 col-span-2 xs:col-span-1'>
 				<FormLabel id={`${id}-phone`} label='Phone' />
 				<input
 					id={`${id}-phone`}
