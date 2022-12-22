@@ -48,7 +48,7 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				await fetch('/contact.html', {
+				await fetch('/', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded',
