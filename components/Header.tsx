@@ -17,8 +17,8 @@ const Header = () => {
 							className='object-contain'
 						/>
 					</div>
-					<div className='h-20 w-[10rem] flex items-center'>
-						<Logo title='Roy Sheppard Logo' className='fill-light' />
+					<div>
+						<Logo title='Roy Sheppard Logo' className='block fill-light w-40' />
 					</div>
 				</div>
 
