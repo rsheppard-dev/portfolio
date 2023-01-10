@@ -7,14 +7,6 @@ import { useFormik } from 'formik';
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
-interface ContactFormData {
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone?: string;
-	message: string;
-}
-
 const ContactForm = () => {
 	const id = useId();
 
@@ -38,7 +30,7 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				await fetch('/contact.html', {
+				await fetch('/', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 					body: new URLSearchParams(values).toString(),

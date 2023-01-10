@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Logo } from './SVGs';
+
 const Header = () => {
 	return (
 		<header className='container'>
@@ -15,14 +17,8 @@ const Header = () => {
 							className='object-contain'
 						/>
 					</div>
-					<div className='relative h-20 w-[10rem]'>
-						<Image
-							src='/img/logo-light.svg'
-							alt='Roy Sheppard Logo'
-							fill
-							sizes='(max-width: 768px) 50vw, 33vw'
-							className='object-contain'
-						/>
+					<div className='h-20 w-[10rem] flex items-center'>
+						<Logo title='Roy Sheppard Logo' className='fill-light' />
 					</div>
 				</div>
 
