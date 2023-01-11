@@ -22,9 +22,9 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={`${poppins.variable} ${sourceSansPro.variable}`}>
 			<head />
-			<body className='bg-primary-300'>
+			<body className='bg-primary-300 min-h-screen flex flex-col'>
 				<Header />
-				{children}
+				<main className='flex-grow'>{children}</main>
 				<Footer />
 			</body>
 		</html>

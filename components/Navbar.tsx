@@ -1,6 +1,10 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+	const pathname = usePathname();
 	return (
 		<nav className='w-fit hidden md:flex bg-dark text-light items-center space-x-5 rounded-b-lg shadow-md px-10'>
 			<div className='relative'>
@@ -10,10 +14,12 @@ const Navbar = () => {
 				>
 					Home
 				</Link>
-				<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-4 w-full'></div>
+				{pathname === '/' ? (
+					<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-4 w-full'></div>
+				) : null}
 			</div>
 
-			<div>
+			<div className='relative'>
 				<Link
 					href='/'
 					className='font-primary font-semibold hover:text-secondary-200 transition-colors'
@@ -22,7 +28,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 
-			<div>
+			<div className='relative'>
 				<Link
 					href='/'
 					className='font-primary font-semibold hover:text-secondary-200 transition-colors'
@@ -31,7 +37,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 
-			<div>
+			<div className='relative'>
 				<Link
 					href='/'
 					className='font-primary font-semibold hover:text-secondary-200 transition-colors'
@@ -40,7 +46,7 @@ const Navbar = () => {
 				</Link>
 			</div>
 
-			<div>
+			<div className='relative'>
 				<Link
 					href='/'
 					className='font-primary font-semibold hover:text-secondary-200 transition-colors'
@@ -49,13 +55,16 @@ const Navbar = () => {
 				</Link>
 			</div>
 
-			<div>
+			<div className='relative'>
 				<Link
-					href='/'
+					href='/contact'
 					className='font-primary font-semibold hover:text-secondary-200 transition-colors'
 				>
 					Contact
 				</Link>
+				{pathname === '/contact' ? (
+					<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-4 w-full'></div>
+				) : null}
 			</div>
 		</nav>
 	);
