@@ -34,6 +34,7 @@ const ContactSection = () => {
 								src='/img/roy-sheppard-contact.png'
 								alt='Roy Sheppard - Contact Me'
 								fill
+								sizes='(max-width: 768px) 50vw, 33vw'
 							/>
 						</div>
 					</div>

@@ -5,9 +5,9 @@ const ChallengesSection = () => {
 		<section className='bg-light py-16'>
 			<div className='container'>
 				<h2 className='mb-16 font-primary text-primary-300 font-bold text-4xl'>
-					Coding Challenges
+					Recent Coding Challenges
 				</h2>
-				<div className='flex flex-wrap justify-center md:justify-start gap-16'>
+				<div className='flex flex-wrap justify-center md:justify-start gap-10'>
 					<ChallengeCard />
 					<ChallengeCard />
 					<ChallengeCard />
