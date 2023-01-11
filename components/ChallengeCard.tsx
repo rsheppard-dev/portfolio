@@ -14,7 +14,7 @@ const ChallengeCard = () => {
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, vitae.
 			</p>
 			<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'>
-				Check Out
+				Explore Challenge
 			</button>
 		</div>
 	);

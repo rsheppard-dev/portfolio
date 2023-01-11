@@ -8,12 +8,8 @@ const Footer = () => {
 	return (
 		<footer className='bg-dark w-full py-8'>
 			<div className='container'>
-				<div className='flex flex-col sm:flex-row justify-between items-center gap-5'>
-					<Link href='/'>
-						<Logo title='Roy Sheppard Logo' className='fill-light w-40' />
-					</Link>
-
-					<div className='flex gap-5'>
+				<div className='flex flex-col sm:flex-row justify-between items-center gap-10'>
+					<div className='flex gap-5 sm:order-last'>
 						<a
 							target='_blank'
 							href='https://github.com/rsheppard-dev'
@@ -58,6 +54,10 @@ const Footer = () => {
 							/>
 						</a>
 					</div>
+
+					<Link href='/'>
+						<Logo title='Roy Sheppard Logo' className='fill-light w-40' />
+					</Link>
 
 					<div className='text-light font-secondary sm:order-first'>
 						© 2023 Roy Sheppard
