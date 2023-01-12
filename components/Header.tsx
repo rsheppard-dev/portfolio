@@ -1,13 +1,16 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Logo } from './SVGs';
 import Navbar from './Navbar';
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
 	return (
 		<header className='container'>
-			<div className='w-full flex justify-center md:justify-between gap-10'>
+			<div className='w-full flex items-center md:items-start justify-between gap-10'>
 				<Link href='/' className='flex items-center pt-5'>
 					<div className='relative w-20 h-20'>
 						<Image
@@ -24,6 +27,8 @@ const Header = () => {
 				</Link>
 
 				<Navbar />
+
+				<MobileMenu />
 			</div>
 		</header>
 	);
