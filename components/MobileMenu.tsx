@@ -12,7 +12,7 @@ const MobileMenu = () => {
 			{({ open }) => (
 				<>
 					<Menu.Button className='md:hidden'>
-						<HiOutlineMenu title='Close Menu' className='text-3xl text-light' />
+						<HiOutlineMenu title='Open Menu' className='text-3xl text-light' />
 					</Menu.Button>
 
 					{open && (
@@ -24,9 +24,9 @@ const MobileMenu = () => {
 								animate={{ opacity: 1, translateX: 0 }}
 								className='bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col px-5 py-16 gap-5 font-primary font-bold text-light'
 							>
-								<Menu.Button className='absolute top-5 right-14'>
+								<Menu.Button>
 									<HiOutlineX
-										title='Open Menu'
+										title='Close Menu'
 										className='text-3xl text-light'
 									/>
 								</Menu.Button>
