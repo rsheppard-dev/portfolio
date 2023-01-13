@@ -7,8 +7,22 @@ import { useFormik } from 'formik';
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
+interface FormData {
+	[firstName: string]: string;
+	lastName: string;
+	email: string;
+	phone: string;
+	message: string;
+}
+
 const ContactForm = () => {
 	const id = useId();
+
+	const encode = (data: FormData) => {
+		return Object.keys(data)
+			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+			.join('&');
+	};
 
 	const {
 		values,
@@ -33,7 +47,7 @@ const ContactForm = () => {
 				await fetch('/', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: new URLSearchParams(values).toString(),
+					body: encode({ 'form-name': 'contact-form', ...values }),
 				});
 				resetForm();
 			} catch (e) {
