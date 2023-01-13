@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ContactForm from './ContactForm';
 
-const ContactSection = ({ h1 = false }: { h1: boolean }) => {
+const ContactSection = ({ h1 = false }) => {
 	return (
 		<section className='container pt-16 pb-10 relative'>
 			{h1 ? (
