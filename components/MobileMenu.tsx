@@ -11,39 +11,37 @@ const MobileMenu = () => {
 		<Menu>
 			{({ open }) => (
 				<>
-					<Menu.Button className='z-30 md:hidden w-10 h-10 rounded-lg bg-light bg-opacity-60 hover:bg-opacity-100 transition-opacity flex justify-center items-center'>
-						{open ? (
-							<HiOutlineX
-								title='Open Menu'
-								className='text-3xl text-primary-300'
-							/>
-						) : (
-							<HiOutlineMenu
-								title='Close Menu'
-								className='text-3xl text-primary-300'
-							/>
-						)}
+					<Menu.Button className='md:hidden'>
+						<HiOutlineMenu title='Close Menu' className='text-3xl text-light' />
 					</Menu.Button>
 
 					{open && (
-						<Menu.Items
-							as={motion.div}
-							static
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							className='absolute container bg-light flex rounded-lg shadow-md top-0 z-10 flex-col p-10 gap-5 font-primary font-bold text-primary-300 border-secondary-100 border-l-4'
-						>
-							{NavLinks.map(link => (
-								<Menu.Item
-									as={Link}
-									key={link.href}
-									href={link.href}
-									className='ui-active:underline w-fit'
-								>
-									{link.label}
-								</Menu.Item>
-							))}
-						</Menu.Items>
+						<div className='absolute top-0 right-1/2 z-20'>
+							<Menu.Items
+								as={motion.div}
+								static
+								initial={{ opacity: 0, translateX: '100vw' }}
+								animate={{ opacity: 1, translateX: 0 }}
+								className='bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col px-5 py-16 gap-5 font-primary font-bold text-light'
+							>
+								<Menu.Button className='absolute top-5 right-14'>
+									<HiOutlineX
+										title='Open Menu'
+										className='text-3xl text-light'
+									/>
+								</Menu.Button>
+								{NavLinks.map(link => (
+									<Menu.Item
+										as={Link}
+										key={link.href}
+										href={link.href}
+										className='ui-active:underline w-fit'
+									>
+										{link.label}
+									</Menu.Item>
+								))}
+							</Menu.Items>
+						</div>
 					)}
 				</>
 			)}

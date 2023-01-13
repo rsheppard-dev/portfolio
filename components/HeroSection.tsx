@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const HeroSection = () => {
 	return (
-		<section className='container pt-20 pb-10 md:pb-20 relative'>
+		<section className='container pt-16 pb-10 md:pb-20 relative'>
 			<div className='flex flex-col md:flex-row justify-between gap-10'>
 				<div className='w-full lg:w-3/5'>
 					<h1 className='text-center md:text-start mb-10 text-4xl md:text-5xl text-light font-primary font-bold subpixel-antialiased leading-snug md:leading-snug'>
@@ -12,17 +12,17 @@ const HeroSection = () => {
 						things!
 					</h1>
 
-					<div className='flex gap-10 justify-center md:justify-start'>
-						<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-primary-300 text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
+					<div className='flex gap-5 justify-center md:justify-start'>
+						<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
 							View My Work
 						</button>
-						<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
+						<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
 							Download CV
 						</button>
 					</div>
 				</div>
 
-				<div className='justify-center flex mt-20 md:mt-0 md:flex-col gap-10 z-10'>
+				<div className='justify-center flex mt-16 md:mt-0 md:flex-col gap-10 z-10'>
 					<a
 						target='_blank'
 						href='https://github.com/rsheppard-dev'
@@ -30,7 +30,7 @@ const HeroSection = () => {
 					>
 						<FaGithub
 							title='GitHub'
-							className='text-light text-5xl opacity-60 hover:opacity-100 transition-opacity'
+							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
 					</a>
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
 					>
 						<FaLinkedin
 							title='LinkedIn'
-							className='text-light text-5xl opacity-60 hover:opacity-100 transition-opacity'
+							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
 					</a>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
 					>
 						<FaTwitter
 							title='Twitter'
-							className='text-light text-5xl opacity-60 hover:opacity-100 transition-opacity'
+							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
 					</a>
 
@@ -63,7 +63,7 @@ const HeroSection = () => {
 					>
 						<FaYoutube
 							title='YouTube'
-							className='text-light text-5xl opacity-60 hover:opacity-100 transition-opacity'
+							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
 					</a>
 				</div>

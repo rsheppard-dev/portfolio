@@ -8,7 +8,7 @@ import NavLinks from './NavLinks';
 const Navbar = () => {
 	const pathname = usePathname();
 	return (
-		<nav className='w-fit hidden md:flex bg-dark text-light items-center space-x-5 rounded-b-lg shadow-md px-10 h-24'>
+		<nav className='w-fit hidden md:flex bg-dark text-light items-center space-x-5 rounded-b-lg shadow-md py-5 px-10'>
 			{NavLinks.map(link => (
 				<div key={link.label} className='relative'>
 					<Link
@@ -18,7 +18,7 @@ const Navbar = () => {
 						{link.label}
 					</Link>
 					{pathname === link.href ? (
-						<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-3 w-full'></div>
+						<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-2 w-full'></div>
 					) : null}
 				</div>
 			))}

@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import ContactForm from './ContactForm';
 
-const ContactSection = () => {
+const ContactSection = ({ h1 = false }: { h1: boolean }) => {
 	return (
 		<section className='container pt-16 pb-10 relative'>
-			<h2 className='mb-16 font-primary text-light font-bold text-4xl'>
-				Get in Touch
-			</h2>
+			{h1 ? (
+				<h1 className='mb-16 font-primary text-light font-bold text-4xl'>
+					Get in Touch
+				</h1>
+			) : (
+				<h2 className='mb-16 font-primary text-light font-bold text-4xl'>
+					Get in Touch
+				</h2>
+			)}
 
 			<div className='flex flex-wrap gap-10 justify-between'>
 				<ContactForm />

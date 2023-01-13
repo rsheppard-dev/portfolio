@@ -10,9 +10,9 @@ import MobileMenu from './MobileMenu';
 const Header = () => {
 	return (
 		<header className='container'>
-			<div className='w-full flex items-center md:items-start justify-between gap-10'>
-				<Link href='/' className='flex items-center pt-5'>
-					<div className='relative w-20 h-20'>
+			<div className='w-full flex items-center md:items-start justify-between gap-2 relative'>
+				<Link href='/' className='flex items-center'>
+					<div className='relative w-16 h-16'>
 						<Image
 							src='/img/roy-sheppard-mark.png'
 							alt='Roy Sheppard Mark'
@@ -22,7 +22,7 @@ const Header = () => {
 						/>
 					</div>
 					<div>
-						<Logo title='Roy Sheppard Logo' className='block fill-light w-40' />
+						<Logo title='Roy Sheppard Logo' className='block fill-light w-32' />
 					</div>
 				</Link>
 
