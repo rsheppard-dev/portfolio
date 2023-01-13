@@ -22,9 +22,9 @@ const MobileMenu = () => {
 								static
 								initial={{ opacity: 0, translateX: '100vw' }}
 								animate={{ opacity: 1, translateX: 0 }}
-								className='bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col px-5 py-16 gap-5 font-primary font-bold text-light'
+								className='outline-none ring-0 bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col px-5 pt-5 gap-5 font-primary font-bold text-light'
 							>
-								<Menu.Button>
+								<Menu.Button className='flex justify-end'>
 									<HiOutlineX
 										title='Close Menu'
 										className='text-3xl text-light'

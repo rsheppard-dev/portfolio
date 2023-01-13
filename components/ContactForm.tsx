@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useId } from 'react';
+import { useId, useState } from 'react';
 
 import { useFormik } from 'formik';
 
@@ -8,7 +8,8 @@ import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
 interface FormData {
-	[firstName: string]: string;
+	[key: string]: string;
+	firstName: string;
 	lastName: string;
 	email: string;
 	phone: string;
@@ -16,6 +17,7 @@ interface FormData {
 }
 
 const ContactForm = () => {
+	const [isSent, setIsSent] = useState(false);
 	const id = useId();
 
 	const encode = (data: FormData) => {
@@ -50,6 +52,7 @@ const ContactForm = () => {
 					body: encode({ 'form-name': 'contact-form', ...values }),
 				});
 				resetForm();
+				setIsSent(true);
 			} catch (e) {
 				console.log(e);
 			}
@@ -196,6 +199,13 @@ const ContactForm = () => {
 					Send Message
 				</button>
 			</div>
+
+			{isSent && (
+				<div className='bg-primary-100 font-secondary font-semibold rounded-lg p-5 col-span-2'>
+					Thank you for getting in touch. Your message has been successfully
+					sent and I will get back to you as soon as possible!
+				</div>
+			)}
 		</form>
 	);
 };
