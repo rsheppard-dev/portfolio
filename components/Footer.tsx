@@ -9,7 +9,7 @@ const Footer = () => {
 		<footer className='bg-dark w-full py-8'>
 			<div className='container'>
 				<div className='flex flex-col sm:flex-row justify-between items-center gap-10'>
-					<div className='flex gap-5 sm:order-last'>
+					<div className='flex gap-8 sm:order-last'>
 						<a
 							target='_blank'
 							href='https://github.com/rsheppard-dev'

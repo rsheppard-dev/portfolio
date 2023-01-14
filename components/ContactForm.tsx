@@ -84,7 +84,7 @@ const ContactForm = () => {
 					type='text'
 					className={`${
 						errors.firstName && touched.firstName ? 'bg-red-100' : null
-					} px-3 py-2 font-secondary text-dark`}
+					} h-10 px-3 py-2 font-secondary text-dark`}
 					onChange={handleChange}
 					value={values.firstName}
 					onBlur={handleBlur}
@@ -107,7 +107,7 @@ const ContactForm = () => {
 					type='text'
 					className={`${
 						errors.lastName && touched.lastName ? 'bg-red-100' : null
-					} px-3 py-2 font-secondary text-dark`}
+					} h-10 px-3 py-2 font-secondary text-dark`}
 					onChange={handleChange}
 					value={values.lastName}
 					onBlur={handleBlur}
@@ -130,7 +130,7 @@ const ContactForm = () => {
 					type='email'
 					className={`${
 						errors.email && touched.email ? 'bg-red-100' : null
-					} px-3 py-2 font-secondary text-dark`}
+					} h-10 px-3 py-2 font-secondary text-dark`}
 					onChange={handleChange}
 					value={values.email}
 					onBlur={handleBlur}
@@ -153,7 +153,7 @@ const ContactForm = () => {
 					type='text'
 					className={`${
 						errors.phone && touched.phone ? 'bg-red-100' : null
-					} px-3 py-2 font-secondary text-dark`}
+					} h-10 px-3 py-2 font-secondary text-dark`}
 					onChange={handleChange}
 					value={values.phone}
 					onBlur={handleBlur}
