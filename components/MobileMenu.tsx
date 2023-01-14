@@ -20,8 +20,8 @@ const MobileMenu = () => {
 							<Menu.Items
 								as={motion.div}
 								static
-								initial={{ translateX: '100vw' }}
-								animate={{ translateX: 0 }}
+								initial={{ x: '100vw' }}
+								animate={{ x: 0 }}
 								transition={{ duration: 0.5 }}
 								className='outline-secondary-100 bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col container pt-5 gap-5 font-primary font-bold text-light'
 							>
