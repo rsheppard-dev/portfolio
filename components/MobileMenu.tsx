@@ -11,7 +11,7 @@ const MobileMenu = () => {
 		<Menu>
 			{({ open }) => (
 				<>
-					<Menu.Button className='absolute w-fit left-0 container md:hidden'>
+					<Menu.Button className='absolute w-fit left-0 container md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-light focus-visible:ring-opacity-75'>
 						<HiOutlineMenu title='Open Menu' className='text-3xl text-light' />
 					</Menu.Button>
 
@@ -28,7 +28,7 @@ const MobileMenu = () => {
 									transition={{ duration: 0.5 }}
 									className='focus:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-opacity-75 border-secondary-100 border-r-4 border-double bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col container pt-5 gap-5 font-primary font-bold text-light'
 								>
-									<Menu.Button className='w-fit'>
+									<Menu.Button className='w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-light focus-visible:ring-opacity-75'>
 										<HiOutlineX
 											title='Close Menu'
 											className='text-3xl text-light'
