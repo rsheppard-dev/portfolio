@@ -23,7 +23,7 @@ const MobileMenu = () => {
 								initial={{ x: '-100vw' }}
 								animate={{ x: 0 }}
 								transition={{ duration: 0.5 }}
-								className='outline-secondary-100 bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col container pt-5 gap-5 font-primary font-bold text-light'
+								className='outline-0 border-secondary-100 border-r-4 border-double bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col container pt-5 gap-5 font-primary font-bold text-light'
 							>
 								<Menu.Button>
 									<HiOutlineX
