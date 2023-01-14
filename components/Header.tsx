@@ -10,7 +10,9 @@ import MobileMenu from './MobileMenu';
 const Header = () => {
 	return (
 		<header className='container'>
-			<div className='w-full flex items-center md:items-start justify-between gap-2 relative'>
+			<div className='w-full flex items-center md:items-start justify-between gap-2'>
+				<MobileMenu />
+
 				<Link href='/' className='flex items-center'>
 					<div className='relative w-16 h-16'>
 						<Image
@@ -27,8 +29,6 @@ const Header = () => {
 				</Link>
 
 				<Navbar />
-
-				<MobileMenu />
 			</div>
 		</header>
 	);

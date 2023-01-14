@@ -16,16 +16,16 @@ const MobileMenu = () => {
 					</Menu.Button>
 
 					{open && (
-						<div className='absolute top-0 right-1/2 z-20'>
+						<div className='absolute top-0 left-0 z-20'>
 							<Menu.Items
 								as={motion.div}
 								static
-								initial={{ x: '100vw' }}
+								initial={{ x: '-100vw' }}
 								animate={{ x: 0 }}
 								transition={{ duration: 0.5 }}
 								className='outline-secondary-100 bg-dark flex min-h-screen w-1/2 fixed shadow-md flex-col container pt-5 gap-5 font-primary font-bold text-light'
 							>
-								<Menu.Button className='flex justify-end'>
+								<Menu.Button>
 									<HiOutlineX
 										title='Close Menu'
 										className='text-3xl text-light'
