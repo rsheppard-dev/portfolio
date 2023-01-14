@@ -13,13 +13,13 @@ const PalindromeChecker = () => {
 
 			<Tab.Group as='section'>
 				<Tab.List className='container font-primary font-bold space-x-2'>
-					<Tab className='bg-primary-200 ui-selected:bg-light py-5 px-8'>
+					<Tab className='bg-primary-200 ui-selected:bg-light py-3 px-4'>
 						Overview
 					</Tab>
-					<Tab className='bg-primary-200 ui-selected:bg-light py-5 px-8'>
+					<Tab className='bg-primary-200 ui-selected:bg-light py-3 px-4'>
 						Code
 					</Tab>
-					<Tab className='bg-primary-200 ui-selected:bg-light py-5 px-8'>
+					<Tab className='bg-primary-200 ui-selected:bg-light py-3 px-4'>
 						Result
 					</Tab>
 				</Tab.List>
