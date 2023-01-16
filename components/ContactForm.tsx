@@ -20,7 +20,7 @@ const ContactForm = () => {
 	const [isSent, setIsSent] = useState(false);
 	const id = useId();
 
-	const encode = (data: FormData) => {
+	const encode = (data: FormData): string => {
 		return Object.keys(data)
 			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
 			.join('&');

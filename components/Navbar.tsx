@@ -17,7 +17,8 @@ const Navbar = () => {
 					>
 						{link.label}
 					</Link>
-					{pathname === link.href ? (
+					{pathname === link.href ||
+					(link.href !== '/' && pathname?.startsWith(link.href)) ? (
 						<div className='h-[3px] bg-secondary-100 rounded-lg absolute left-0 -bottom-2 w-full'></div>
 					) : null}
 				</div>

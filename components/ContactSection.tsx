@@ -1,13 +1,21 @@
+'use client';
+
 import Image from 'next/image';
+
+import Breadcrumbs from './Breadcrumbs';
 import ContactForm from './ContactForm';
 
 const ContactSection = ({ h1 = false }) => {
 	return (
 		<section className='container pt-16 pb-10 relative'>
 			{h1 ? (
-				<h1 className='mb-16 font-primary text-light font-bold text-4xl'>
-					Get in Touch
-				</h1>
+				<>
+					<h1 className='mt-16 mb-5 font-primary text-light font-bold text-4xl'>
+						Get in Touch
+					</h1>
+
+					<Breadcrumbs />
+				</>
 			) : (
 				<h2 className='mb-16 font-primary text-light font-bold text-4xl'>
 					Get in Touch
