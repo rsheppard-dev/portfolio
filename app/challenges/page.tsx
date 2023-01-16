@@ -12,7 +12,7 @@ const Challenges = () => {
 
 			<Breadcrumbs />
 
-			<div className='flex flex-wrap justify-center md:justify-start gap-10'>
+			<div className='flex flex-wrap justify-center md:justify-start gap-10 mb-10'>
 				<ChallengeCard />
 			</div>
 		</section>

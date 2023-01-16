@@ -2,8 +2,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Breadcrumbs = () => {
-	const pathname = usePathname();
+	const pathname = usePathname()?.substring(1);
 	const hrefs = pathname?.split('/')!;
+
+	if (hrefs[0] !== '') {
+		hrefs.unshift('');
+	} else {
+		hrefs[0] = '';
+	}
+
 	const crumbs = hrefs.map((crumb: string): string => {
 		if (crumb === '') return 'Home';
 
@@ -16,9 +23,9 @@ const Breadcrumbs = () => {
 		return words.join(' ');
 	});
 	return (
-		<ul className='mb-10 flex gap-2 items-center'>
+		<ul className='mb-10 flex gap-2 flex-wrap'>
 			{crumbs.map((crumb: string, i: number) => (
-				<li key={crumb} className='flex gap-2'>
+				<li key={crumb} className='flex gap-2 font-secondary'>
 					<div className='text-light'>
 						{crumbs.length - 1 !== i ? (
 							<Link href={'/' + hrefs[i]} className='text-primary-100'>
