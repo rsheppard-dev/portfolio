@@ -2,26 +2,26 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Breadcrumbs = () => {
-	const pathname = usePathname()?.substring(1);
+	const pathname = usePathname()?.substring(1)!;
 	const hrefs = pathname?.split('/')!;
 
-	if (hrefs[0] !== '') {
-		hrefs.unshift('');
-	} else {
-		hrefs[0] = '';
-	}
+	const getCrumbs = (): string[] => {
+		if (hrefs[0] !== '') hrefs.unshift('');
 
-	const crumbs = hrefs.map((crumb: string): string => {
-		if (crumb === '') return 'Home';
+		return hrefs.map((crumb: string): string => {
+			if (crumb === '') return 'Home';
 
-		const words = crumb.split('-');
+			const words = crumb.split('-');
 
-		for (let i = 0; i < words.length; i++) {
-			words[i] = words[i][0].toUpperCase() + words[i].substring(1);
-		}
+			for (let i = 0; i < words.length; i++) {
+				words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+			}
 
-		return words.join(' ');
-	});
+			return words.join(' ');
+		});
+	};
+
+	const crumbs = getCrumbs();
 	return (
 		<ul className='mb-10 flex gap-2 flex-wrap'>
 			{crumbs.map((crumb: string, i: number) => (
