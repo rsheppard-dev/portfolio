@@ -4,6 +4,8 @@ import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
 import { monokaiSublime } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { useOpenInWindow } from 'use-open-window';
+import { SiHtml5, SiCss3, SiBootstrap, SiTypescript } from 'react-icons/si';
+import { FaCheckSquare } from 'react-icons/fa';
 
 import { Tab } from '@headlessui/react';
 import Breadcrumbs from '../../../components/Breadcrumbs';
@@ -55,6 +57,99 @@ const EvenHundred = () => {
 							<h2 className='font-primary font-bold text-xl text-primary-300 mb-10'>
 								Overview
 							</h2>
+
+							<section className='mb-10'>
+								<h3 className='font-primary font-bold text-lg text-primary-300 mb-5'>
+									Challenge
+								</h3>
+								<p className='font-secondary text-dark leading-loose'>
+									A javascript/typescript coding challenge. Create a program
+									that accepts a start value and end value from a user. Generate
+									all the numbers inbetween these two values. Finally, display
+									the numbers and output any even numbers in bold.
+								</p>
+							</section>
+
+							<section className='mb-10'>
+								<h3 className='font-primary font-bold text-lg text-primary-300 my-5'>
+									Features
+								</h3>
+
+								<ul className='font-secondary font-bold space-y-3'>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>CSS and BootStrap Layout</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>JavaScript Fundamentals</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>TypeScript</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span>Loops</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>Functions</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>DOM Manipulation</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>If/Then/Else</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>Boolean Logic</span>
+									</li>
+								</ul>
+							</section>
+
+							<section className='mb-10'>
+								<h3 className='font-primary font-bold text-lg text-primary-300 mb-5'>
+									Tech Stack
+								</h3>
+
+								<ul className='flex flex-wrap items-center gap-4'>
+									<li className='flex flex-col items-center gap-2'>
+										<SiHtml5
+											title='HTML5'
+											className='text-orange-600 text-4xl'
+										/>
+										<span className='text-primary text-xs font-bold'>
+											HTML5
+										</span>
+									</li>
+									<li className='flex flex-col items-center gap-2'>
+										<SiCss3 title='CSS3' className='text-blue-500 text-4xl' />
+										<span className='text-primary text-xs font-bold'>CSS3</span>
+									</li>
+									<li className='flex flex-col items-center gap-2'>
+										<SiBootstrap
+											title='BootStrap 5'
+											className='text-purple-500 text-4xl'
+										/>
+										<span className='text-primary text-xs font-bold'>
+											BootStrap
+										</span>
+									</li>
+									<li className='flex flex-col items-center gap-2'>
+										<SiTypescript
+											title='TypeScript'
+											className='text-blue-500 text-4xl'
+										/>
+										<span className='text-primary text-xs font-bold'>
+											TypeScript
+										</span>
+									</li>
+								</ul>
+							</section>
 						</Tab.Panel>
 						<Tab.Panel
 							as='article'
@@ -81,12 +176,12 @@ const EvenHundred = () => {
 							</h2>
 
 							<p className='text-secondary'>
-								Application needs to be opened in a new window.{' '}
+								Application needs to open in a new window.{' '}
 								<button
 									onClick={handleWindowOpen}
-									className='underline decoration-secondary-100 underline-offset-4 hover:underline-offset-2 font-semibold hover:decoration-secondary-200 transition-all'
+									className='text-primary-300 underline decoration-secondary-100 underline-offset-4 hover:underline-offset-2 font-semibold hover:decoration-secondary-200 transition-all'
 								>
-									Click here to launch
+									Click here to launch app
 								</button>
 								.
 							</p>

@@ -7,11 +7,11 @@ const ChallengeCard = () => {
 				Even Hundred 💯
 			</h2>
 			<p className='font-secondary leading-loose'>
-				Challenge: Take a range of numbers for a user and output all numbers
+				Challenge: Take a range of numbers from a user and output all numbers
 				within that range.
 			</p>
 			<p className='font-secondary leading-loose'>
-				Even numbers should be displayed in bold.
+				Even numbers should be output in bold.
 			</p>
 			<Link
 				href='/challenges/even-hundred'

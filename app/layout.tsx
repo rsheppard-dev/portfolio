@@ -6,7 +6,7 @@ import { Poppins, Source_Sans_Pro } from '@next/font/google';
 
 const poppins = Poppins({
 	variable: '--poppins',
-	weight: ['600', '700'],
+	weight: ['400', '600', '700'],
 });
 
 const sourceSansPro = Source_Sans_Pro({
