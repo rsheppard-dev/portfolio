@@ -9,7 +9,7 @@ import { FaCheckSquare } from 'react-icons/fa';
 
 import { Tab } from '@headlessui/react';
 import Breadcrumbs from '../../../components/Breadcrumbs';
-import { codeString } from '../../../code/evenHundred';
+import { codeString } from '../../../challengeCode/evenHundred';
 
 SyntaxHighlighter.registerLanguage('typescript', ts);
 

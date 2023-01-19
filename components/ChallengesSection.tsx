@@ -1,5 +1,3 @@
-'use client';
-
 import ChallengeCard from './ChallengeCard';
 import IChallenge from '../interfaces/IChallenge';
 import { ReactElement } from 'react';
