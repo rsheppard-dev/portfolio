@@ -63,10 +63,10 @@ const EvenHundred = () => {
 									Challenge
 								</h3>
 								<p className='font-secondary text-dark leading-loose'>
-									A javascript/typescript coding challenge. Create a program
-									that accepts a start value and end value from a user. Generate
-									all the numbers inbetween these two values. Finally, display
-									the numbers and output any even numbers in bold.
+									Create a program that accepts a start value and end value from
+									a user. Generate all the numbers inbetween these two values.
+									Finally, display the numbers and output any even numbers in
+									bold.
 								</p>
 							</section>
 

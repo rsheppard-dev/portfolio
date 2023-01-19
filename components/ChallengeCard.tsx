@@ -7,15 +7,13 @@ const ChallengeCard = () => {
 				Even Hundred 💯
 			</h2>
 			<p className='font-secondary leading-loose'>
-				Challenge: Take a range of numbers from a user and output all numbers
-				within that range.
-			</p>
-			<p className='font-secondary leading-loose'>
-				Even numbers should be output in bold.
+				Challenge: Create a program that accepts a start value and end value
+				from a user. Generate all the numbers inbetween these two values.
+				Finally, display the numbers and output any even numbers in bold.
 			</p>
 			<Link
 				href='/challenges/even-hundred'
-				className='bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1 w-fit'
+				className='bg-primary-100 mt-2 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold w-fit'
 			>
 				Explore Challenge
 			</Link>
