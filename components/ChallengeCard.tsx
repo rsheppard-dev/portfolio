@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const ChallengeCard = () => {
 	return (
-		<div className='bg-white px-6 py-4 space-y-2 w-full rounded-lg shadow-md'>
+		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
 			<h2 className='font-primary text-primary-300 font-bold text-xl'>
 				Even Hundred 💯
 			</h2>
@@ -13,7 +13,7 @@ const ChallengeCard = () => {
 			</p>
 			<Link
 				href='/challenges/even-hundred'
-				className='bg-primary-100 mt-2 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold w-fit'
+				className='block mt-4 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold w-fit'
 			>
 				Explore Challenge
 			</Link>
