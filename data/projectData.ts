@@ -18,7 +18,7 @@ const projectData: IProject[] = [
 		description:
 			'An application that connects to a movie API and generates a quiz based on the response.',
 		image: '',
-		tech: ['HTML5', 'CSS3', 'JavaScript', 'C#'],
+		tech: ['HTML5', 'CSS3', 'TypeScript', 'C#'],
 		links: {
 			readme: '',
 			github: '',

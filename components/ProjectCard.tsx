@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import {
 	SiHtml5,
 	SiCss3,
@@ -10,8 +12,9 @@ import {
 	SiNextdotjs,
 } from 'react-icons/si';
 import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
+
 import IProject from '../interfaces/IProject';
-import { ReactElement } from 'react';
+import Tech from '../types/Tech';
 
 const ProjectCard = ({
 	project,
@@ -23,7 +26,7 @@ const ProjectCard = ({
 	const { title, description, image, tech, links } = project;
 
 	const displayIcon = (
-		tech: string,
+		tech: Tech,
 		className: string = 'text-light text-3xl'
 	): ReactElement => {
 		switch (tech) {
@@ -92,7 +95,7 @@ const ProjectCard = ({
 
 				<div className='flex flex-wrap items-center gap-5 mb-5'>
 					{tech.map(
-						(t: string): ReactElement => (
+						(t: Tech): ReactElement => (
 							<div
 								key={t}
 								className='flex flex-col gap-5 justify-center items-center'
