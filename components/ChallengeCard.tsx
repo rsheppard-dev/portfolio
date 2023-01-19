@@ -1,15 +1,27 @@
 import Link from 'next/link';
 
+import { SiJavascript, SiTypescript, SiCsharp } from 'react-icons/si';
+
 const ChallengeCard = () => {
 	return (
-		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
-			<h2 className='font-primary text-primary-300 font-bold text-xl'>
-				Even Hundred 💯
-			</h2>
-			<p className='font-secondary leading-loose'>
-				Challenge: Create a program that accepts a start value and end value
-				from a user. Generate all the numbers inbetween these two values.
-				Finally, display the numbers and output any even numbers in bold.
+		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-md shadow-md'>
+			<div className='flex items-center justify-between flex-wrap gap-3'>
+				<h2 className='font-primary text-primary-300 font-bold text-xl'>
+					Even Hundred 💯
+				</h2>
+				<div className='flex items-center justify-between'>
+					<div className='flex flex-col gap-5 justify-between items-center'>
+						<span className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'>
+							TypeScript
+						</span>
+					</div>
+				</div>
+			</div>
+			<p className='font-secondary leading-loose text-dark'>
+				<span className='font-bold'>Challenge:</span> Create a program that
+				accepts a start value and end value from a user. Generate all the
+				numbers inbetween these two values. Finally, display the numbers and
+				output any even numbers in bold.
 			</p>
 			<Link
 				href='/challenges/even-hundred'
