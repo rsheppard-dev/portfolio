@@ -1,7 +1,10 @@
 'use client';
 
+import { ReactElement } from 'react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ChallengeCard from '../../components/ChallengeCard';
+import IChallenge from '../../interfaces/IChallenge';
+import challengeData from '../../data/challengeData';
 
 const Challenges = () => {
 	return (
@@ -13,7 +16,11 @@ const Challenges = () => {
 			<Breadcrumbs />
 
 			<div className='flex flex-wrap justify-center md:justify-start gap-10 mb-10'>
-				<ChallengeCard />
+				{challengeData.map(
+					(challenge: IChallenge): ReactElement => (
+						<ChallengeCard key={challenge.title} challenge={challenge} />
+					)
+				)}
 			</div>
 		</section>
 	);

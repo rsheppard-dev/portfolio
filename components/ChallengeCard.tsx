@@ -1,30 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 
-import { SiJavascript, SiTypescript, SiCsharp } from 'react-icons/si';
+import IChallenge from '../interfaces/IChallenge';
 
-const ChallengeCard = () => {
+const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
+	const { title, description, tech, link } = challenge;
 	return (
 		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-md shadow-md'>
 			<div className='flex items-center justify-between flex-wrap gap-3'>
 				<h2 className='font-primary text-primary-300 font-bold text-xl'>
-					Even Hundred 💯
+					{title}
 				</h2>
 				<div className='flex items-center justify-between'>
 					<div className='flex flex-col gap-5 justify-between items-center'>
-						<span className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'>
-							TypeScript
-						</span>
+						{tech.map(t => (
+							<span
+								key={t}
+								className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'
+							>
+								{t}
+							</span>
+						))}
 					</div>
 				</div>
 			</div>
 			<p className='font-secondary leading-loose text-dark'>
-				<span className='font-bold'>Challenge:</span> Create a program that
-				accepts a start value and end value from a user. Generate all the
-				numbers inbetween these two values. Finally, display the numbers and
-				output any even numbers in bold.
+				<span className='font-bold'>Challenge:</span> {description}
 			</p>
 			<Link
-				href='/challenges/even-hundred'
+				href={link}
 				className='block mt-4 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold w-fit'
 			>
 				Explore Challenge

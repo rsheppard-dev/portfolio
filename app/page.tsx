@@ -3,6 +3,7 @@ import ChallengesSection from '../components/ChallengesSection';
 import ContactSection from '../components/ContactSection';
 import HeroSection from '../components/HeroSection';
 import ProjectsSection from '../components/ProjectsSection';
+import challengeData from '../data/challengeData';
 
 export default function Home() {
 	return (
@@ -10,7 +11,7 @@ export default function Home() {
 			<HeroSection />
 			<BlogSection />
 			<ProjectsSection />
-			<ChallengesSection />
+			<ChallengesSection challengeData={challengeData} />
 			<ContactSection />
 		</>
 	);
