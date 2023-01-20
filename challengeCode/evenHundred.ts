@@ -16,7 +16,7 @@ const getValues = (e: Event): void => {
 
 	// check values entered by user are valid numbers
 	if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-		// call generateNumbers
+		// call generateNumbers function with input values
 		const numbers = generateNumbers(startValue, endValue);
 
 		// call displayNumbers function
@@ -43,26 +43,26 @@ const generateNumbers = (startValue: number, endValue: number): number[] => {
 
 // function to display number range
 const displayNumbers = (numbers: number[]): void => {
+	// get table body from html document
+	const tableBody = document.getElementById(
+		'results'
+	) as HTMLTableSectionElement;
+
 	let templateRows = '';
 
 	// loop through all the numbers
 	for (let i = 0; i < numbers.length; i++) {
 		const number = numbers[i];
-		let className: string;
 
 		// check if current number is even or odd and assign correct class
-		if (number % 2 === 0) {
-			className = 'even';
-		} else {
-			className = 'odd';
-		}
+		const className = number % 2 === 0 ? 'even' : 'odd';
 
 		// update template rows
-		templateRows += '<tr><td class="' + className + '">' + number + '<td></tr>';
+		templateRows += \`<tr><td class="\${className}">\${number}<td></tr>\`;
 	}
 
 	// update html in table body
-	document.getElementById('results')!.innerHTML = templateRows;
+	tableBody.innerHTML = templateRows;
 };
 
 // get button element
@@ -71,4 +71,4 @@ const submitButton = document.getElementById('submit') as HTMLButtonElement;
 // create event listener for when user clicks button
 submitButton.addEventListener('click', getValues);
 
-export {};	`;
+export {};`;
