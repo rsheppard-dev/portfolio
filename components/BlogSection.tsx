@@ -1,4 +1,8 @@
+import { ReactElement } from 'react';
+
 import BlogCard from './BlogCard';
+import blogData from '../data/blogData';
+import IBlog from '../interfaces/IBlog';
 
 const BlogSection = () => {
 	return (
@@ -9,24 +13,13 @@ const BlogSection = () => {
 				</h2>
 
 				<ul className='list-none flex overflow-x-scroll pb-10 gap-10 snap-x scrollbar'>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
-					<li className='snap-start'>
-						<BlogCard />
-					</li>
+					{blogData.map(
+						(blog: IBlog): ReactElement => (
+							<li key={blog.title} className='snap-start'>
+								<BlogCard blog={blog} />
+							</li>
+						)
+					)}
 				</ul>
 			</div>
 		</section>

@@ -26,7 +26,7 @@ const EvenHundred = () => {
 	const [handleWindowOpen] = useOpenInWindow(url, options);
 
 	return (
-		<section className='min-h-screen flex flex-col'>
+		<section className='h-screen flex flex-col'>
 			<h1 className='container mt-16 mb-5 font-primary text-light font-bold text-4xl'>
 				Even Hundred
 			</h1>

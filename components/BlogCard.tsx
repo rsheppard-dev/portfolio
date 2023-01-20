@@ -1,27 +1,35 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FaBookOpen } from 'react-icons/fa';
+import { format } from 'date-fns';
 
-const BlogCard = () => {
+import IBlog from '../interfaces/IBlog';
+
+const BlogCard = ({ blog }: { blog: IBlog }) => {
+	const { title, description, image, date, slug } = blog;
 	return (
-		<div className='bg-white rounded-lg w-72 overflow-hidden'>
+		<div className='bg-white rounded-lg w-72 overflow-hidden flex flex-col min-h-full'>
 			<div className='bg-red-400 h-48 w-full'></div>
-			<div className='px-6 py-3 flex flex-col gap-5'>
+			<div className='flex-grow px-6 py-4 flex flex-col gap-5 '>
 				<h3 className='text-primary-300 font-primary font-bold text-xl'>
-					How I made my blog with C# and .NET
+					{title}
 				</h3>
-				<p className='font-secondary text-dark'>
-					How to use C# and .NET to create your own blog.
-				</p>
+
+				<div className='flex-grow font-secondary text-dark'>{description}</div>
+
 				<div className='flex justify-between items-center'>
 					<div className='font-secondary text-gray-600 text-sm'>
-						- Jan 15th 2023
+						<>- {format(date, 'MMM Mo yy')}</>
 					</div>
 
 					<div>
-						<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold'>
+						<Link
+							href={'/blog/' + slug}
+							className='bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold whitespace-nowrap'
+						>
 							Read <FaBookOpen className='inline-block align-middle' />
-						</button>
+						</Link>
 					</div>
 				</div>
 			</div>
