@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 import BlogCard from './BlogCard';
 import blogData from '../data/blogData';
 import IBlog from '../interfaces/IBlog';
@@ -14,7 +12,7 @@ const BlogSection = () => {
 
 				<ul className='list-none flex overflow-x-scroll pb-10 gap-10 snap-x scrollbar'>
 					{blogData.map(
-						(blog: IBlog): ReactElement => (
+						(blog: IBlog): JSX.Element => (
 							<li key={blog.title} className='snap-start'>
 								<BlogCard blog={blog} />
 							</li>

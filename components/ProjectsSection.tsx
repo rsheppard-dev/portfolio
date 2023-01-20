@@ -1,8 +1,5 @@
-import { FaBook, FaGithub, FaLaptop, FaHtml5, FaCss3Alt } from 'react-icons/fa';
-import { SiJavascript, SiCsharp } from 'react-icons/si';
 import ProjectCard from './ProjectCard';
 import projectData from '../data/projectData';
-import { ReactElement } from 'react';
 
 const ProjectsSection = () => {
 	return (
@@ -12,7 +9,7 @@ const ProjectsSection = () => {
 			</h2>
 
 			{projectData.map(
-				(project, index): ReactElement => (
+				(project, index): JSX.Element => (
 					<ProjectCard
 						key={project.title}
 						project={project}

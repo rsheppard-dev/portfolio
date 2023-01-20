@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 import {
 	SiHtml5,
 	SiCss3,
@@ -25,10 +23,11 @@ const ProjectCard = ({
 }) => {
 	const { title, description, image, tech, links } = project;
 
+	// function that takes a tech name and converts it to an icon
 	const displayIcon = (
 		tech: Tech,
 		className: string = 'text-light text-3xl'
-	): ReactElement => {
+	): JSX.Element => {
 		switch (tech) {
 			case 'HTML5':
 				return <SiHtml5 title={tech} className={className} />;
@@ -49,7 +48,7 @@ const ProjectCard = ({
 			case 'BootStrap':
 				return <SiBootstrap title={tech} className={className} />;
 			default:
-				return <span className={className}>Unknown</span>;
+				throw new Error('Invalid tech input!');
 		}
 	};
 	return (
@@ -95,7 +94,7 @@ const ProjectCard = ({
 
 				<div className='flex flex-wrap items-center gap-5 mb-5'>
 					{tech.map(
-						(t: Tech): ReactElement => (
+						(t: Tech): JSX.Element => (
 							<div
 								key={t}
 								className='flex flex-col gap-5 justify-center items-center'

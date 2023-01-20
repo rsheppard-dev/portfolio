@@ -1,9 +1,10 @@
 import Tech from '../types/Tech';
+import Image from './Image';
 
 interface IProject {
 	title: string;
 	description: string;
-	image: string;
+	image: Image;
 	tech: Tech[];
 	links: {
 		readme: string;

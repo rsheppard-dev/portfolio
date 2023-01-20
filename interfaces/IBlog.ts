@@ -1,11 +1,9 @@
+import Image from './Image';
+
 interface IBlog {
 	title: string;
 	description: string;
-	image: {
-		src: string;
-		width: string | number;
-		height: string | number;
-	};
+	image: Image;
 	date: Date;
 	slug: string;
 }

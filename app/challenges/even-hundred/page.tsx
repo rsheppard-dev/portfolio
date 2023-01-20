@@ -13,7 +13,7 @@ import { codeString } from '../../../challengeCode/evenHundred';
 
 SyntaxHighlighter.registerLanguage('typescript', ts);
 
-const EvenHundred = () => {
+const EvenHundred = (): JSX.Element => {
 	const url = 'https://evenhundred.netlify.app/';
 	const options = {
 		centered: true /* default */,

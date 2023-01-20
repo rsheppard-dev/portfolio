@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import IChallenge from '../interfaces/IChallenge';
+import Tech from '../types/Tech';
 
 const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 	const { title, description, tech, link } = challenge;
@@ -12,14 +13,16 @@ const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 				</h2>
 				<div className='flex items-center justify-between'>
 					<div className='flex flex-col gap-5 justify-between items-center'>
-						{tech.map(t => (
-							<span
-								key={t}
-								className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'
-							>
-								{t}
-							</span>
-						))}
+						{tech.map(
+							(t: Tech): JSX.Element => (
+								<span
+									key={t}
+									className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'
+								>
+									{t}
+								</span>
+							)
+						)}
 					</div>
 				</div>
 			</div>

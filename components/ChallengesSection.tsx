@@ -1,6 +1,5 @@
 import ChallengeCard from './ChallengeCard';
 import IChallenge from '../interfaces/IChallenge';
-import { ReactElement } from 'react';
 import challengeData from '../data/challengeData';
 
 const ChallengesSection = () => {
@@ -12,7 +11,7 @@ const ChallengesSection = () => {
 				</h2>
 				<div className='flex flex-wrap justify-center md:justify-start gap-10'>
 					{challengeData.map(
-						(challenge: IChallenge): ReactElement => (
+						(challenge: IChallenge): JSX.Element => (
 							<ChallengeCard key={challenge.title} challenge={challenge} />
 						)
 					)}
