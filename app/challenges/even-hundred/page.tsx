@@ -175,7 +175,7 @@ const EvenHundred = () => {
 								Result
 							</h2>
 
-							<p className='font-secondary'>
+							<p className='font-secondary leading-loose text-dark'>
 								Application needs to open in a new window.{' '}
 								<button
 									onClick={handleWindowOpen}

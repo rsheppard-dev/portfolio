@@ -1,12 +1,9 @@
 import ChallengeCard from './ChallengeCard';
 import IChallenge from '../interfaces/IChallenge';
 import { ReactElement } from 'react';
+import challengeData from '../data/challengeData';
 
-const ChallengesSection = ({
-	challengeData,
-}: {
-	challengeData: IChallenge[];
-}) => {
+const ChallengesSection = () => {
 	return (
 		<section className='bg-light py-16'>
 			<div className='container'>
