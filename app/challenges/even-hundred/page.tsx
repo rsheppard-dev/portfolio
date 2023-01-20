@@ -82,31 +82,35 @@ const EvenHundred = () => {
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>JavaScript Fundamentals</span>
+										<span className='text-dark'>Arrow Functions</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>TypeScript</span>
+										<span className='text-dark'>Arrays</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span>Loops</span>
+										<span>DOM Manipulation</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Functions</span>
+										<span className='text-dark'>Event Listeners</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>DOM Manipulation</span>
+										<span className='text-dark'>For Loops</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>If/Then/Else</span>
+										<span className='text-dark'>If/Else Statements</span>
 									</li>
 									<li className='flex gap-2 items-center'>
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Boolean Logic</span>
+										<span className='text-dark'>Ternary Operators</span>
+									</li>
+									<li className='flex gap-2 items-center'>
+										<FaCheckSquare className='text-secondary-200 text-2xl' />
+										<span className='text-dark'>Template Literals</span>
 									</li>
 								</ul>
 							</section>
