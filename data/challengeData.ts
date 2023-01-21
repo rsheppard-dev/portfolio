@@ -8,6 +8,13 @@ const challengeData: IChallenge[] = [
 		tech: ['TypeScript'],
 		link: '/challenges/even-hundred',
 	},
+	{
+		title: 'String Flip 👈 👉',
+		description:
+			'Create a program to accept a string, reverse it and display the result.',
+		tech: ['TypeScript'],
+		link: '/challenges/string-flip',
+	},
 ];
 
 export default challengeData;
