@@ -3,33 +3,33 @@ const getValues = (e: Event): void => {
 	// prevent default form behaviour (page refresh)
 	e.preventDefault();
 
+	// hide old errors if they exists
+	displayError();
+
 	// get elements from html page
 	const startValueInput = document.getElementById(
 		'startValue'
 	) as HTMLInputElement;
 	const endValueInput = document.getElementById('endValue') as HTMLInputElement;
-	const errorBox = document.getElementById('error') as HTMLDivElement;
 
 	// get values from inputs and parse to integers
 	const startValue = parseInt(startValueInput.value);
 	const endValue = parseInt(endValueInput.value);
 
-	// check values entered by user are valid numbers
-	if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-		// remove error if one exists
-		if (!errorBox.classList.contains('d-none')) {
-			errorBox.classList.add('d-none');
-		}
-		
+	// check if values entered by user are invalid numbers
+	if (!Number.isInteger(startValue) && Number.isInteger(endValue)) {
+		// display error if invalid input
+		displayError('You can only enter numbers in the inputs above.');
+	} else if (startValue > endValue) {
+		// display error if startValue is higher than endValue
+		displayError('The start value must be lower than the end value!');
+	} else {
+		// cle
 		// call generateNumbers function with input values
 		const numbers = generateNumbers(startValue, endValue);
 
 		// call displayNumbers function
 		displayNumbers(numbers);
-	} else {
-		// display error on page if invalid input
-		errorBox.innerText = 'You can only enter numbers in the inputs above.';
-		errorBox.classList.remove('d-none');
 	}
 };
 
@@ -68,6 +68,21 @@ const displayNumbers = (numbers: number[]): void => {
 
 	// update html in table body
 	tableBody.innerHTML = templateRows;
+};
+
+// function to display error message
+const displayError = (message?: string): void => {
+	// get error box element from html
+	const errorBox = document.getElementById('error') as HTMLDivElement;
+
+	if (message) {
+		// display if message received
+		errorBox.innerText = message;
+		errorBox.classList.remove('d-none');
+	} else if (!errorBox.classList.contains('d-none')) {
+		// else remove error box if one exists
+		errorBox.classList.add('d-none');
+	}
 };
 
 // get button element
