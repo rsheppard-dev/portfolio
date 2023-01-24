@@ -13,8 +13,8 @@ const getValues = (e: Event): void => {
 	const startValue = parseInt(startValueInput.value);
 	const endValue = parseInt(endValueInput.value);
 
-	// check if values entered by user are numbers
-	if (!Number.isInteger(startValue) && Number.isInteger(endValue)) {
+	// check if values entered are not numbers
+	if (!Number.isInteger(startValue) || !Number.isInteger(endValue)) {
 		// display error if input is not a number
 		handleError('You can only enter numbers in the inputs above!');
 	} else if (startValue > endValue) {
