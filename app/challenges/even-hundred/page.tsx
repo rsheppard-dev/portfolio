@@ -64,7 +64,7 @@ const EvenHundred = (): JSX.Element => {
 								</h3>
 								<p className='font-secondary text-dark leading-loose'>
 									Create a program that accepts a start value and end value from
-									a user. Generate all the numbers inbetween these two values.
+									a user. Generate all the numbers inbetween those two values.
 									Finally, display the numbers and output any even numbers in
 									bold.
 								</p>

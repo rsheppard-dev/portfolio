@@ -15,6 +15,7 @@ const getString = (e: Event): void => {
 		if (!errorBox.classList.contains('d-none')) {
 			errorBox.classList.add('d-none');
 		}
+		
 		// call function to flip string
 		const flippedString = flipString(string);
 

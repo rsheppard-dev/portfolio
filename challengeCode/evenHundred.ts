@@ -16,6 +16,11 @@ const getValues = (e: Event): void => {
 
 	// check values entered by user are valid numbers
 	if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+		// remove error if one exists
+		if (!errorBox.classList.contains('d-none')) {
+			errorBox.classList.add('d-none');
+		}
+		
 		// call generateNumbers function with input values
 		const numbers = generateNumbers(startValue, endValue);
 
