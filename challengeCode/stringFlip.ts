@@ -2,29 +2,25 @@ export const codeString = `// function to get string from user interface
 const getString = (e: Event): void => {
 	e.preventDefault();
 
-	// get html elements
+	// get string input element
 	const stringInput = document.getElementById('string') as HTMLInputElement;
-	const errorBox = document.getElementById('error') as HTMLDivElement;
 
 	// get value from input
 	const string = stringInput.value;
 
-	// confirm user input a valid string
-	if (typeof string === 'string' && string !== '') {
-		// remove error if one exists
-		if (!errorBox.classList.contains('d-none')) {
-			errorBox.classList.add('d-none');
-		}
-		
+	// if input is not a string or an empty value
+	if (typeof string !== 'string' || string === '') {
+		// display error
+		handleError('You must enter a string in the input above!');
+	} else {
+		// clear error if one exists
+		handleError();
+
 		// call function to flip string
 		const flippedString = flipString(string);
 
 		// call function to display flipped string
 		displayFlippedString(flippedString);
-	} else {
-		// display error box if invalid input entered by user
-		errorBox.innerText = 'You must enter a string in the input above!';
-		errorBox.classList.remove('d-none');
 	}
 };
 
@@ -48,8 +44,26 @@ const displayFlippedString = (flippedString: string): void => {
 	result.innerText = flippedString;
 };
 
+// function to display and hide error message
+const handleError = (message?: string): void => {
+	// get error box element from html
+	const errorBox = document.getElementById('error') as HTMLDivElement;
+
+	if (message) {
+		// display if message received
+		errorBox.innerText = message;
+		errorBox.classList.remove('d-none');
+	} else if (!errorBox.classList.contains('d-none')) {
+		// else remove error box if one exists
+		errorBox.innerText = '';
+		errorBox.classList.add('d-none');
+	}
+};
+
 // get button element
 const submitButton = document.getElementById('submit') as HTMLButtonElement;
 
 // create event listener for when user clicks button
-submitButton.addEventListener('click', getString);`;
+submitButton.addEventListener('click', getString);
+
+export {}`;

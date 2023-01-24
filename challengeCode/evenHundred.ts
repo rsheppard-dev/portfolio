@@ -3,9 +3,6 @@ const getValues = (e: Event): void => {
 	// prevent default form behaviour (page refresh)
 	e.preventDefault();
 
-	// hide old errors if they exists
-	displayError();
-
 	// get elements from html page
 	const startValueInput = document.getElementById(
 		'startValue'
@@ -16,15 +13,17 @@ const getValues = (e: Event): void => {
 	const startValue = parseInt(startValueInput.value);
 	const endValue = parseInt(endValueInput.value);
 
-	// check if values entered by user are invalid numbers
+	// check if values entered by user are numbers
 	if (!Number.isInteger(startValue) && Number.isInteger(endValue)) {
-		// display error if invalid input
-		displayError('You can only enter numbers in the inputs above.');
+		// display error if input is not a number
+		handleError('You can only enter numbers in the inputs above!');
 	} else if (startValue > endValue) {
 		// display error if startValue is higher than endValue
-		displayError('The start value must be lower than the end value!');
+		handleError('The start value must be lower than the end value!');
 	} else {
-		// cle
+		// clear old errors if they exists
+		handleError();
+
 		// call generateNumbers function with input values
 		const numbers = generateNumbers(startValue, endValue);
 
@@ -70,8 +69,8 @@ const displayNumbers = (numbers: number[]): void => {
 	tableBody.innerHTML = templateRows;
 };
 
-// function to display error message
-const displayError = (message?: string): void => {
+// function to display and hide error message
+const handleError = (message?: string): void => {
 	// get error box element from html
 	const errorBox = document.getElementById('error') as HTMLDivElement;
 
@@ -81,6 +80,7 @@ const displayError = (message?: string): void => {
 		errorBox.classList.remove('d-none');
 	} else if (!errorBox.classList.contains('d-none')) {
 		// else remove error box if one exists
+		errorBox.innerText = '';
 		errorBox.classList.add('d-none');
 	}
 };
@@ -89,4 +89,6 @@ const displayError = (message?: string): void => {
 const submitButton = document.getElementById('submit') as HTMLButtonElement;
 
 // create event listener for when user clicks button
-submitButton.addEventListener('click', getValues);`;
+submitButton.addEventListener('click', getValues);
+
+export {};`;
