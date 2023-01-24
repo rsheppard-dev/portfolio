@@ -9,7 +9,7 @@ const challengeData: IChallenge[] = [
 		link: '/challenges/even-hundred',
 	},
 	{
-		title: 'String Flip 👈 👉',
+		title: 'String Flip 👈',
 		description:
 			'Create a program to accept a string, reverse it and display the result.',
 		tech: ['TypeScript'],

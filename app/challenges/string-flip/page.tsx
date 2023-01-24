@@ -102,10 +102,6 @@ const EvenHundred = (): JSX.Element => {
 										<FaCheckSquare className='text-secondary-200 text-2xl' />
 										<span className='text-dark'>If/Else Statements</span>
 									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Ternary Operators</span>
-									</li>
 								</ul>
 							</section>
 
