@@ -15,6 +15,13 @@ const challengeData: IChallenge[] = [
 		tech: ['TypeScript'],
 		link: '/challenges/string-flip',
 	},
+	{
+		title: 'FizzBuzz',
+		description:
+			'Create a program that prints the numbers from 1 to 100. For numbers that are a multiple of 3 display Fizz, numbers that are a multiple of 5 display Buzz and for numbers that are a multiple of 3 and 5 display FizzBuzz.',
+		tech: ['TypeScript'],
+		link: '/challenges/fizzbuzz',
+	},
 ];
 
 export default challengeData;
