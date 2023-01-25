@@ -113,8 +113,11 @@ const displayData = (fizzBuzzResult: string[]): void => {
 
 		// for each column add current value and correct class
 		rowCol.forEach((col: HTMLTableCellElement, index: number): void => {
-			col.innerText = fizzBuzzResult[i + index];
-			col.classList.add(fizzBuzzResult[i + index]);
+			// check data exists
+			if (fizzBuzzResult[i + index]) {
+				col.innerText = fizzBuzzResult[i + index];
+				col.classList.add(fizzBuzzResult[i + index]);
+			}
 		});
 
 		// insert current table row into dom
