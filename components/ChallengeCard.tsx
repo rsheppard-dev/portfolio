@@ -4,7 +4,7 @@ import IChallenge from '../interfaces/IChallenge';
 import Tech from '../types/Tech';
 
 const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
-	const { title, description, tech, link } = challenge;
+	const { title, description, tech, slug } = challenge;
 	return (
 		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
 			<div className='flex items-center justify-between flex-wrap gap-3'>
@@ -12,7 +12,7 @@ const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 					{title}
 				</h2>
 				<div className='flex items-center justify-between'>
-					<div className='flex flex-col gap-5 justify-between items-center'>
+					<div className='flex flex-wrap gap-2 justify-between items-center'>
 						{tech.map(
 							(t: Tech): JSX.Element => (
 								<span
@@ -30,7 +30,7 @@ const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 				<span className='font-bold'>Challenge:</span> {description}
 			</p>
 			<Link
-				href={link}
+				href={'/challenges/' + slug}
 				className='block mt-4 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold w-fit'
 			>
 				Explore Challenge

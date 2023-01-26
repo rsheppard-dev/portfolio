@@ -3,8 +3,11 @@ import Tech from '../types/Tech';
 interface IChallenge {
 	title: string;
 	description: string;
+	features: string[];
 	tech: Tech[];
-	link: string;
+	slug: string;
+	live: string;
+	code: string[];
 }
 
 export default IChallenge;

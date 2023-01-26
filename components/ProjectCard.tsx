@@ -1,18 +1,8 @@
-import {
-	SiHtml5,
-	SiCss3,
-	SiBootstrap,
-	SiJavascript,
-	SiTypescript,
-	SiReact,
-	SiCsharp,
-	SiTailwindcss,
-	SiNextdotjs,
-} from 'react-icons/si';
 import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
 
 import IProject from '../interfaces/IProject';
 import Tech from '../types/Tech';
+import displayIcon from '../utils/displayIcon';
 
 const ProjectCard = ({
 	project,
@@ -23,34 +13,6 @@ const ProjectCard = ({
 }) => {
 	const { title, description, image, tech, links } = project;
 
-	// function that takes a tech name and converts it to an icon
-	const displayIcon = (
-		tech: Tech,
-		className: string = 'text-light text-3xl'
-	): JSX.Element => {
-		switch (tech) {
-			case 'HTML5':
-				return <SiHtml5 title={tech} className={className} />;
-			case 'CSS3':
-				return <SiCss3 title={tech} className={className} />;
-			case 'JavaScript':
-				return <SiJavascript title={tech} className={className} />;
-			case 'TypeScript':
-				return <SiTypescript title={tech} className={className} />;
-			case 'C#':
-				return <SiCsharp title={tech} className={className} />;
-			case 'React':
-				return <SiReact title={tech} className={className} />;
-			case 'NextJS':
-				return <SiNextdotjs title={tech} className={className} />;
-			case 'TailwindCSS':
-				return <SiTailwindcss title={tech} className={className} />;
-			case 'BootStrap':
-				return <SiBootstrap title={tech} className={className} />;
-			default:
-				throw new Error('Invalid tech input!');
-		}
-	};
 	return (
 		<div
 			className={`flex flex-col ${

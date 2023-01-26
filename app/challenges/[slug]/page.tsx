@@ -1,20 +1,38 @@
 'use client';
+import { notFound } from 'next/navigation';
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
 import { monokaiSublime } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { useOpenInWindow } from 'use-open-window';
-import { SiHtml5, SiCss3, SiBootstrap, SiTypescript } from 'react-icons/si';
 import { FaCheckSquare } from 'react-icons/fa';
-
 import { Tab } from '@headlessui/react';
+
 import Breadcrumbs from '../../../components/Breadcrumbs';
-import { codeString } from '../../../challengeCode/stringFlip';
+import challengeData from '../../../data/challengeData';
+import IChallenge from '../../../interfaces/IChallenge';
+import displayIcon from '../../../utils/displayIcon';
+import Tech from '../../../types/Tech';
 
 SyntaxHighlighter.registerLanguage('typescript', ts);
 
-const EvenHundred = (): JSX.Element => {
-	const url = 'https://string-flip.netlify.app/';
+const getChallengeData = (slug: string): IChallenge | undefined => {
+	// retreive current pages challenge data
+	return challengeData.find((challenge: IChallenge): IChallenge | undefined => {
+		if (challenge.slug === slug) return challenge;
+	});
+};
+
+const ChallengePage = ({
+	params,
+}: {
+	params: { slug: string };
+}): JSX.Element => {
+	const data = getChallengeData(params.slug);
+
+	if (!data) notFound();
+
+	const url = data.live;
 	const options = {
 		centered: true /* default */,
 		specs: {
@@ -28,7 +46,7 @@ const EvenHundred = (): JSX.Element => {
 	return (
 		<section className='min-h-screen flex flex-col'>
 			<h1 className='container mt-16 mb-5 font-primary text-light font-bold text-4xl'>
-				String Flip
+				{data.title}
 			</h1>
 
 			<div className='container'>
@@ -63,8 +81,7 @@ const EvenHundred = (): JSX.Element => {
 									Challenge
 								</h3>
 								<p className='font-secondary text-dark leading-loose'>
-									Create a program to accept a string, reverse it and display
-									the result.
+									{data.description}
 								</p>
 							</section>
 
@@ -74,34 +91,14 @@ const EvenHundred = (): JSX.Element => {
 								</h3>
 
 								<ul className='font-secondary font-bold space-y-3'>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>CSS and BootStrap Layout</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Arrow Functions</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>String Methods</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Array Methods</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span>DOM Manipulation</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>Event Listeners</span>
-									</li>
-									<li className='flex gap-2 items-center'>
-										<FaCheckSquare className='text-secondary-200 text-2xl' />
-										<span className='text-dark'>If/Else Statements</span>
-									</li>
+									{data.features.sort().map(
+										(feature: string): JSX.Element => (
+											<li key={feature} className='flex gap-2 items-center'>
+												<FaCheckSquare className='text-secondary-200 text-2xl' />
+												<span className='text-dark'>{feature}</span>
+											</li>
+										)
+									)}
 								</ul>
 							</section>
 
@@ -111,37 +108,19 @@ const EvenHundred = (): JSX.Element => {
 								</h3>
 
 								<ul className='flex flex-wrap items-center gap-4'>
-									<li className='flex flex-col items-center gap-2'>
-										<SiHtml5
-											title='HTML5'
-											className='text-orange-600 text-4xl'
-										/>
-										<span className='text-primary text-xs font-bold'>
-											HTML5
-										</span>
-									</li>
-									<li className='flex flex-col items-center gap-2'>
-										<SiCss3 title='CSS3' className='text-blue-500 text-4xl' />
-										<span className='text-primary text-xs font-bold'>CSS3</span>
-									</li>
-									<li className='flex flex-col items-center gap-2'>
-										<SiBootstrap
-											title='BootStrap 5'
-											className='text-purple-500 text-4xl'
-										/>
-										<span className='text-primary text-xs font-bold'>
-											BootStrap
-										</span>
-									</li>
-									<li className='flex flex-col items-center gap-2'>
-										<SiTypescript
-											title='TypeScript'
-											className='text-blue-500 text-4xl'
-										/>
-										<span className='text-primary text-xs font-bold'>
-											TypeScript
-										</span>
-									</li>
+									{data.tech.map(
+										(tech: Tech): JSX.Element => (
+											<li
+												key={tech}
+												className='flex flex-col items-center gap-2'
+											>
+												{displayIcon(tech, 'text-4xl', true)}
+												<span className='text-primary text-xs font-bold'>
+													{tech}
+												</span>
+											</li>
+										)
+									)}
 								</ul>
 							</section>
 						</Tab.Panel>
@@ -158,7 +137,7 @@ const EvenHundred = (): JSX.Element => {
 								showLineNumbers={true}
 								style={monokaiSublime}
 							>
-								{codeString}
+								{data.code[0]}
 							</SyntaxHighlighter>
 						</Tab.Panel>
 						<Tab.Panel
@@ -187,4 +166,4 @@ const EvenHundred = (): JSX.Element => {
 	);
 };
 
-export default EvenHundred;
+export default ChallengePage;
