@@ -38,9 +38,10 @@ const getValues = (e: Event): void => {
 		// call generateNumbers function to generate numbers from range
 		const numbers = generateNumbers(startValue, endValue);
 
+		// calll fizzBuzz function to convert numbers
 		const fizzBuzzResult = fizzBuzz(numbers, fizzValue, buzzValue);
 
-		// call displayNumbers function
+		// call displayData function to display results
 		displayData(fizzBuzzResult);
 	}
 };
@@ -88,7 +89,7 @@ const fizzBuzz = (
 	return fizzBuzzResult;
 };
 
-// function to display number range
+// function to display fizzbuzz results
 const displayData = (fizzBuzzResult: string[]): void => {
 	// get table body from dom
 	const tableBody = document.getElementById(
