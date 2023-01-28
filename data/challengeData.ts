@@ -2,10 +2,11 @@ import IChallenge from '../interfaces/IChallenge';
 import { codeString as evenHundredCode } from '../challengeCode/evenHundred';
 import { codeString as stringFlipCode } from '../challengeCode/stringFlip';
 import { codeString as fizzBuzzCode } from '../challengeCode/fizzBuzz';
+import { codeString as palindromeCheckerCode } from '../challengeCode/palindromeCheckerCode';
 
 const challengeData: IChallenge[] = [
 	{
-		title: 'Even Hundred 💯',
+		title: 'Even Hundred',
 		description:
 			'Create a program that accepts a start value and end value from a user. Generate all the numbers inbetween those two values. Finally, display the numbers and output any even numbers in bold.',
 		features: [
@@ -60,6 +61,26 @@ const challengeData: IChallenge[] = [
 		slug: 'fizzbuzz',
 		code: [fizzBuzzCode],
 		live: 'https://rs-fizzbuzz.netlify.app',
+	},
+	{
+		title: 'Palindrome Checker',
+		description:
+			'A palindrome is a word, phrase or sequence that reads the same backwards as forwards. Create program that checks if the phrase entered is a palindrome.',
+		features: [
+			'CSS and BootStrap Layout',
+			'Arrow Functions',
+			'Arrays',
+			'Array Methods',
+			'String Methods',
+			'DOM Manipulation',
+			'Event Listeners',
+			'If Statements',
+			'HTML Templating',
+		],
+		tech: ['HTML5', 'CSS3', 'BootStrap', 'TypeScript'],
+		slug: 'palindrome-checker',
+		code: [palindromeCheckerCode],
+		live: 'https://rs-palindrome.netlify.app',
 	},
 ];
 

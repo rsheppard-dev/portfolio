@@ -10,7 +10,7 @@ const ChallengesSection = () => {
 					Recent Coding Challenges
 				</h2>
 				<div className='flex flex-wrap justify-center md:justify-start gap-10'>
-					{challengeData.reverse().map(
+					{challengeData.map(
 						(challenge: IChallenge): JSX.Element => (
 							<ChallengeCard key={challenge.title} challenge={challenge} />
 						)

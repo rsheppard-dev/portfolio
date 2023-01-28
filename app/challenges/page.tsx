@@ -16,7 +16,7 @@ const Challenges = () => {
 			<Breadcrumbs />
 
 			<div className='flex flex-wrap justify-center md:justify-start gap-10 mb-10'>
-				{challengeData.reverse().map(
+				{challengeData.map(
 					(challenge: IChallenge): ReactElement => (
 						<ChallengeCard key={challenge.title} challenge={challenge} />
 					)
