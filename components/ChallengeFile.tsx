@@ -14,7 +14,7 @@ import IChallenge from '../interfaces/IChallenge';
 SyntaxHighlighter.registerLanguage('typescript', ts);
 
 const ChallengeFile = ({ data }: { data: IChallenge }) => {
-	const url = data.live;
+	const { description, features, tech, code, live: url } = data;
 	const options = {
 		centered: true /* default */,
 		specs: {
@@ -53,7 +53,7 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 								Challenge
 							</h3>
 							<p className='font-secondary text-dark leading-loose'>
-								{data.description}
+								{description}
 							</p>
 						</section>
 
@@ -63,7 +63,7 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							</h3>
 
 							<ul className='font-secondary font-bold space-y-3'>
-								{data.features.sort().map(
+								{features.sort().map(
 									(feature: string): JSX.Element => (
 										<li key={feature} className='flex gap-2 items-center'>
 											<FaCheckSquare className='text-secondary-200 text-2xl' />
@@ -80,7 +80,7 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							</h3>
 
 							<ul className='flex flex-wrap items-center gap-4'>
-								{data.tech.map(
+								{tech.map(
 									(tech: Tech): JSX.Element => (
 										<li key={tech} className='flex flex-col items-center gap-2'>
 											{displayIcon(tech, 'text-4xl', true)}
@@ -106,7 +106,7 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							showLineNumbers={true}
 							style={monokaiSublime}
 						>
-							{data.code[0]}
+							{code[0]}
 						</SyntaxHighlighter>
 					</Tab.Panel>
 					<Tab.Panel
