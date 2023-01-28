@@ -10,11 +10,9 @@ const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 				<h2 className='font-primary text-primary-300 font-bold text-xl'>
 					{title}
 				</h2>
-				<div className='flex items-center justify-between'>
-					<div className='flex flex-wrap gap-2 justify-between items-center'>
-						<span className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'>
-							{tech[tech.length - 1]}
-						</span>
+				<div>
+					<div className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'>
+						{tech[tech.length - 1]}
 					</div>
 				</div>
 			</div>
