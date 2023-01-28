@@ -6,7 +6,7 @@ const ChallengeCard = ({ challenge }: { challenge: IChallenge }) => {
 	const { title, description, tech, slug } = challenge;
 	return (
 		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
-			<div className='flex items-center justify-between gap-3'>
+			<div className='flex justify-between gap-3'>
 				<h2 className='font-primary text-primary-300 font-bold text-xl'>
 					{title}
 				</h2>
