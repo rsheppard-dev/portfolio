@@ -5,8 +5,6 @@ import challengeData from '../../../data/challengeData';
 import IChallenge from '../../../interfaces/IChallenge';
 import ChallengeFile from '../../../components/ChallengeFile';
 
-// SyntaxHighlighter.registerLanguage('typescript', ts);
-
 export async function generateStaticParams() {
 	return challengeData.map(challenge => ({
 		slug: challenge.slug,

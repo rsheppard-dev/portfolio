@@ -3,6 +3,7 @@ import { codeString as evenHundredCode } from '../challengeCode/evenHundred';
 import { codeString as stringFlipCode } from '../challengeCode/stringFlip';
 import { codeString as fizzBuzzCode } from '../challengeCode/fizzBuzz';
 import { codeString as palindromeCheckerCode } from '../challengeCode/palindromeCheckerCode';
+import { codeString as loanCalculatorCode } from '../challengeCode/loanCalculator';
 
 const challengeData: IChallenge[] = [
 	{
@@ -81,6 +82,26 @@ const challengeData: IChallenge[] = [
 		slug: 'palindrome-checker',
 		code: [palindromeCheckerCode],
 		live: 'https://rs-palindrome.netlify.app',
+	},
+	{
+		title: 'Loan Calculator',
+		description:
+			'Write a mortgage loan calculator application that takes in three parameters: The amount of money loaned in dollars (balance), The time over which the loan will be repaid, in months (term), The percentage rate at which interest will accrue on the loan (rate).',
+		features: [
+			'CSS and BootStrap Layout',
+			'Functions',
+			'Type Casting',
+			'DOM Manipulation',
+			'Event Listeners',
+			'If Statements',
+			'For Loops',
+			'String Methods',
+			'HTML Templating',
+		],
+		tech: ['HTML5', 'CSS3', 'BootStrap', 'TypeScript'],
+		slug: 'loan-calculator',
+		code: [loanCalculatorCode],
+		live: 'https://rs-loan-calculator.netlify.app',
 	},
 ];
 

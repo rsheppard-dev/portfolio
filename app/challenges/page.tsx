@@ -1,6 +1,5 @@
 'use client';
 
-import { ReactElement } from 'react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ChallengeCard from '../../components/ChallengeCard';
 import IChallenge from '../../interfaces/IChallenge';
@@ -17,7 +16,7 @@ const Challenges = () => {
 
 			<div className='flex flex-wrap flex-col-reverse justify-center md:justify-start gap-10 mb-10'>
 				{challengeData.map(
-					(challenge: IChallenge): ReactElement => (
+					(challenge: IChallenge): JSX.Element => (
 						<ChallengeCard key={challenge.title} challenge={challenge} />
 					)
 				)}
