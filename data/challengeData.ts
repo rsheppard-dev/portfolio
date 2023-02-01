@@ -86,7 +86,7 @@ const challengeData: IChallenge[] = [
 	{
 		title: 'Loan Calculator',
 		description:
-			'Write a mortgage loan calculator application that takes in three parameters: The amount of money loaned in dollars (balance), The time over which the loan will be repaid, in months (term), The percentage rate at which interest will accrue on the loan (rate).',
+			'Write a mortgage loan calculator application that takes in three parameters: The amount of money loaned (balance). The time over which the loan will be repaid in months (term). The percentage rate at which interest will accrue on the loan (rate).',
 		features: [
 			'CSS and BootStrap Layout',
 			'Functions',
