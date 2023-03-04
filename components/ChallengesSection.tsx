@@ -1,8 +1,9 @@
 import ChallengeCard from './ChallengeCard';
-import IChallenge from '../interfaces/IChallenge';
-import challengeData from '../data/challengeData';
+import getChallenges from '../utils/getChallenges';
+import Challenge from '../interfaces/Challenge';
 
-const ChallengesSection = () => {
+const ChallengesSection = async () => {
+	const challenges = await getChallenges();
 	return (
 		<section className='bg-light py-16'>
 			<div className='container'>
@@ -10,9 +11,9 @@ const ChallengesSection = () => {
 					Recent Coding Challenges
 				</h2>
 				<div className='flex flex-wrap flex-col-reverse justify-center md:justify-start gap-10'>
-					{challengeData.map(
-						(challenge: IChallenge): JSX.Element => (
-							<ChallengeCard key={challenge.title} challenge={challenge} />
+					{challenges.map(
+						(challenge: Challenge): JSX.Element => (
+							<ChallengeCard key={challenge._id} challenge={challenge} />
 						)
 					)}
 				</div>

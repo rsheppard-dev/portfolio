@@ -1,7 +1,6 @@
 import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
 
 import IProject from '../interfaces/IProject';
-import Tech from '../types/Tech';
 import displayIcon from '../utils/displayIcon';
 
 const ProjectCard = ({
@@ -56,7 +55,7 @@ const ProjectCard = ({
 
 				<div className='flex flex-wrap items-center gap-5 mb-5'>
 					{tech.map(
-						(t: Tech): JSX.Element => (
+						(t): JSX.Element => (
 							<div
 								key={t}
 								className='flex flex-col gap-5 justify-center items-center'

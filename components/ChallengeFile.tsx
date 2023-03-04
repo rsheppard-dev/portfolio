@@ -1,20 +1,17 @@
 'use client';
 
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import ts from 'react-syntax-highlighter/dist/esm/languages/hljs/typescript';
-import { monokaiSublime } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { useOpenInWindow } from 'use-open-window';
 import { FaCheckSquare } from 'react-icons/fa';
 import { Tab } from '@headlessui/react';
 
 import displayIcon from '../utils/displayIcon';
-import Tech from '../types/Tech';
-import IChallenge from '../interfaces/IChallenge';
+import { PortableText } from '@portabletext/react';
+import ChallengeCode from './ChallengeCode';
+import Challenge from '../interfaces/Challenge';
 
-SyntaxHighlighter.registerLanguage('typescript', ts);
+const ChallengeFile = ({ data }: { data: Challenge }) => {
+	const { description, code, features, techStack, url } = data;
 
-const ChallengeFile = ({ data }: { data: IChallenge }) => {
-	const { description, features, tech, code, live: url } = data;
 	const options = {
 		centered: true /* default */,
 		specs: {
@@ -52,9 +49,9 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							<h3 className='font-primary font-bold text-lg text-primary-300 mb-5'>
 								Challenge
 							</h3>
-							<p className='font-secondary text-dark leading-loose'>
-								{description}
-							</p>
+							<div className='font-secondary text-dark leading-loose'>
+								<PortableText value={description} />
+							</div>
 						</section>
 
 						<section className='mb-10'>
@@ -80,8 +77,8 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							</h3>
 
 							<ul className='flex flex-wrap items-center gap-4'>
-								{tech.map(
-									(tech: Tech): JSX.Element => (
+								{techStack.map(
+									(tech: string): JSX.Element => (
 										<li key={tech} className='flex flex-col items-center gap-2'>
 											{displayIcon(tech, 'text-4xl', true)}
 											<span className='text-primary text-xs font-bold'>
@@ -101,13 +98,7 @@ const ChallengeFile = ({ data }: { data: IChallenge }) => {
 							Code
 						</h2>
 
-						<SyntaxHighlighter
-							language='typescript'
-							showLineNumbers={true}
-							style={monokaiSublime}
-						>
-							{code[0]}
-						</SyntaxHighlighter>
+						<ChallengeCode code={code} />
 					</Tab.Panel>
 					<Tab.Panel
 						as='article'

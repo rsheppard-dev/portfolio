@@ -1,6 +1,6 @@
 import Image from './Image';
 
-interface IBlog {
+interface Blog {
 	title: string;
 	description: string;
 	image: Image;
@@ -8,4 +8,4 @@ interface IBlog {
 	slug: string;
 }
 
-export default IBlog;
+export default Blog;

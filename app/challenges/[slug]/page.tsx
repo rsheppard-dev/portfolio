@@ -1,21 +1,24 @@
 import { notFound } from 'next/navigation';
 
 import Breadcrumbs from '../../../components/Breadcrumbs';
-import challengeData from '../../../data/challengeData';
-import IChallenge from '../../../interfaces/IChallenge';
 import ChallengeFile from '../../../components/ChallengeFile';
+import Challenge from '../../../interfaces/Challenge';
+import getChallenges from '../../../utils/getChallenges';
 
 export async function generateStaticParams() {
-	return challengeData.map(challenge => ({
+	const challenges = await getChallenges();
+
+	return challenges.map((challenge: Challenge) => ({
 		slug: challenge.slug,
 	}));
 }
 
-const ChallengePage = ({ params }: { params: { slug: string } }) => {
+async function ChallengePage({ params }: { params: { slug: string } }) {
+	const challenges = await getChallenges();
 	const { slug } = params;
 
-	const data = challengeData.find(
-		(challenge: IChallenge): IChallenge | undefined => {
+	const data = challenges.find(
+		(challenge: Challenge): Challenge | undefined => {
 			if (challenge.slug === slug) return challenge;
 		}
 	);
@@ -35,6 +38,6 @@ const ChallengePage = ({ params }: { params: { slug: string } }) => {
 			<ChallengeFile data={data} />
 		</section>
 	);
-};
+}
 
 export default ChallengePage;

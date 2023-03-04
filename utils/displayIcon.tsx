@@ -10,11 +10,9 @@ import {
 	SiNextdotjs,
 } from 'react-icons/si';
 
-import Tech from '../types/Tech';
-
 // function that takes a tech name and converts it to an icon
 const displayIcon = (
-	tech: Tech,
+	tech: string,
 	className: string = 'text-3xl text-light',
 	colour: boolean = false
 ): JSX.Element => {
@@ -75,7 +73,7 @@ const displayIcon = (
 					className={`${className} ${colour && 'text-sky-400'}`}
 				/>
 			);
-		case 'BootStrap':
+		case 'Bootstrap':
 			return (
 				<SiBootstrap
 					title={tech}
