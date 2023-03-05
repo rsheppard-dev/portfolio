@@ -19,6 +19,13 @@ const challenge = defineType({
 			title: 'Description',
 		}),
 		defineField({
+			name: 'blurb',
+			type: 'string',
+			title: 'Blurb',
+			description:
+				'Short description that will be displayed on the challenge card.',
+		}),
+		defineField({
 			name: 'code',
 			type: 'code',
 			title: 'Code',

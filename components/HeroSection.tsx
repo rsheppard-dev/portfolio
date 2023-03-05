@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 
@@ -13,9 +14,12 @@ const HeroSection = () => {
 					</h1>
 
 					<div className='flex gap-5 justify-center md:justify-start'>
-						<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
+						<Link
+							href='/projects'
+							className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'
+						>
 							View My Work
-						</button>
+						</Link>
 						<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
 							Download CV
 						</button>

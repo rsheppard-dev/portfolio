@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { PortableText } from '@portabletext/react';
 import Challenge from '../interfaces/Challenge';
 
 const ChallengeCard = ({ challenge }: { challenge: Challenge }) => {
-	const { title, description, mainLanguage, slug } = challenge;
+	const { title, description, blurb, mainLanguage, slug } = challenge;
+
 	return (
 		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
 			<div className='flex justify-between gap-3'>
@@ -18,12 +18,12 @@ const ChallengeCard = ({ challenge }: { challenge: Challenge }) => {
 				</div>
 			</div>
 			<div className='font-secondary text-dark prose max-w-none'>
-				<span className='font-bold'>Challenge:</span>
-				<PortableText value={description} />
+				{/* if blurb show it or show first paragraph of description */}
+				{blurb ? blurb : description[0].children[0].text}
 			</div>
 			<Link
 				href={'/challenges/' + slug}
-				className='block mt-4 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold w-fit'
+				className='block mt-2 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold w-fit'
 			>
 				View Challenge
 			</Link>

@@ -3,10 +3,11 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import ChallengeFile from '../../../components/ChallengeFile';
 import Challenge from '../../../interfaces/Challenge';
-import getChallenges from '../../../utils/getChallenges';
+import getAllChallenges from '../../../queries/getAllChallenges';
+import getChallenges from '../../../queries/getChallenges';
 
 export async function generateStaticParams() {
-	const challenges = await getChallenges();
+	const challenges = await getAllChallenges();
 
 	return challenges.map((challenge: Challenge) => ({
 		slug: challenge.slug,
@@ -14,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 async function ChallengePage({ params }: { params: { slug: string } }) {
-	const challenges = await getChallenges();
+	const challenges = await getChallenges(0, 10);
 	const { slug } = params;
 
 	const data = challenges.find(

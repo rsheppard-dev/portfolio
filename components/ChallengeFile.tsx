@@ -49,7 +49,7 @@ const ChallengeFile = ({ data }: { data: Challenge }) => {
 							<h3 className='font-primary font-bold text-lg text-primary-300 mb-5'>
 								Challenge
 							</h3>
-							<div className='font-secondary text-dark leading-loose'>
+							<div className='font-secondary text-dark prose max-w-none'>
 								<PortableText value={description} />
 							</div>
 						</section>

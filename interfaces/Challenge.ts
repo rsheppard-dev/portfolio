@@ -1,9 +1,15 @@
-import { SanityDocument, TypedObject } from 'sanity';
+import Block from './Block';
 import Code from './Code';
 
-interface Challenge extends SanityDocument {
+interface Challenge {
+	_createdAt: Date;
+	_id: string;
+	_rev: string;
+	_type: 'challenge';
+	_updatedAt: Date;
 	title: string;
-	description: TypedObject | TypedObject[];
+	description: Block[];
+	blurb: string;
 	code: Code;
 	features: string[];
 	techStack: string[];

@@ -1,7 +1,7 @@
 interface Code {
+	_type: 'code';
 	language: string;
 	code: string;
-	highlightedLines: number[];
 }
 
 export default Code;
