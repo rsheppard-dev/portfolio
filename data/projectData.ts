@@ -1,6 +1,4 @@
-import IProject from '../interfaces/IProject';
-
-const projectData: IProject[] = [
+const projectData = [
 	{
 		title: 'Bug Crunch',
 		description:
