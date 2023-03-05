@@ -4,7 +4,7 @@ import { PortableText } from '@portabletext/react';
 import Challenge from '../interfaces/Challenge';
 
 const ChallengeCard = ({ challenge }: { challenge: Challenge }) => {
-	const { title, description, techStack, slug } = challenge;
+	const { title, description, mainLanguage, slug } = challenge;
 	return (
 		<div className='bg-white px-6 py-4 flex flex-col gap-3 w-full rounded-lg shadow-md'>
 			<div className='flex justify-between gap-3'>
@@ -13,11 +13,11 @@ const ChallengeCard = ({ challenge }: { challenge: Challenge }) => {
 				</h2>
 				<div>
 					<div className='font-secondary text-xs text-light font-bold bg-primary-300 rounded-md px-2 py-1'>
-						{techStack[techStack?.length - 1]}
+						{mainLanguage}
 					</div>
 				</div>
 			</div>
-			<div className='font-secondary leading-loose text-dark'>
+			<div className='font-secondary text-dark prose max-w-none'>
 				<span className='font-bold'>Challenge:</span>
 				<PortableText value={description} />
 			</div>

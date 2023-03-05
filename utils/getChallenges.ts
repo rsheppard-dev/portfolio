@@ -10,6 +10,7 @@ function getChallenges() {
 			code,
 			features,
 			techStack[],
+			mainLanguage,
 			"slug": slug.current,
 			url
 		}
