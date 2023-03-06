@@ -1,12 +1,12 @@
 'use client';
 
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Breadcrumbs from '../../../components/Breadcrumbs';
 
-const Projects = () => {
+const Blog = () => {
 	return (
 		<section className='container'>
 			<h1 className='mt-16 mb-5 font-primary text-light font-bold text-4xl'>
-				Web Development Projects
+				My Blog Posts
 			</h1>
 
 			<Breadcrumbs />
@@ -14,4 +14,4 @@ const Projects = () => {
 	);
 };
 
-export default Projects;
+export default Blog;

@@ -1,10 +1,9 @@
 import { notFound } from 'next/navigation';
 
-import Breadcrumbs from '../../../components/Breadcrumbs';
-import ChallengeFile from '../../../components/ChallengeFile';
-import Challenge from '../../../interfaces/Challenge';
-import getAllChallenges from '../../../queries/getAllChallenges';
-import getChallenges from '../../../queries/getChallenges';
+import Breadcrumbs from '../../../../components/Breadcrumbs';
+import ChallengeFile from '../../../../components/ChallengeFile';
+import Challenge from '../../../../interfaces/Challenge';
+import getAllChallenges from '../../../../queries/getAllChallenges';
 
 export async function generateStaticParams() {
 	const challenges = await getAllChallenges();
@@ -15,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 async function ChallengePage({ params }: { params: { slug: string } }) {
-	const challenges = await getChallenges(0, 10);
+	const challenges = await getAllChallenges();
 	const { slug } = params;
 
 	const data = challenges.find(

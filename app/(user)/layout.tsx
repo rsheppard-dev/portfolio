@@ -1,6 +1,7 @@
-import './globals.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import '../globals.css';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Providers from '../../components/Providers';
 
 import { Poppins, Source_Sans_Pro } from '@next/font/google';
 
@@ -23,9 +24,11 @@ export default function RootLayout({
 		<html lang='en' className={`${poppins.variable} ${sourceSansPro.variable}`}>
 			<head />
 			<body className='bg-primary-300 min-h-screen flex flex-col'>
-				<Header />
-				<main className='flex-grow'>{children}</main>
-				<Footer />
+				<Providers>
+					<Header />
+					<main className='flex-grow'>{children}</main>
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);

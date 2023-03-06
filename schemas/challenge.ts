@@ -15,7 +15,7 @@ const challenge = defineType({
 		defineField({
 			name: 'description',
 			type: 'array',
-			of: [{ type: 'block' }],
+			of: [{ type: 'block' }, { type: 'image' }],
 			title: 'Description',
 		}),
 		defineField({

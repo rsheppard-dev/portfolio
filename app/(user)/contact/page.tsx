@@ -1,4 +1,4 @@
-import ContactSection from '../../components/ContactSection';
+import ContactSection from '../../../components/ContactSection';
 
 const Contact = () => {
 	return <ContactSection h1={true} />;
