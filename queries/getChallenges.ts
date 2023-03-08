@@ -14,17 +14,16 @@ async function getChallenges(resultsPerPage = 3, page = 1) {
 			description,
 			blurb,
 			code,
-			features,
+			features[],
 			techStack[],
 			mainLanguage,
 			"slug": slug.current,
 			url
 		},
 		"totalResults": count(*[_type == "challenge"]),
-		"resultsPerPage": $resultsPerPage, 
 		}
 	`,
-		{ start, end, resultsPerPage }
+		{ start, end }
 	);
 }
 

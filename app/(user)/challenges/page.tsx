@@ -25,6 +25,7 @@ function Challenges() {
 		queryKey: ['challenges', page],
 		queryFn: async () => await getChallenges(resultsPerPage, page),
 		keepPreviousData: true,
+		placeholderData: [],
 	});
 
 	function nextPage() {
@@ -36,7 +37,7 @@ function Challenges() {
 	}
 
 	const totalPages = Math.ceil(
-		parseInt(challenges?.totalResults) / parseInt(challenges?.resultsPerPage)
+		parseInt(challenges?.totalResults) / resultsPerPage
 	);
 
 	return (
@@ -63,46 +64,48 @@ function Challenges() {
 			) : (
 				<>
 					<div className='flex flex-wrap justify-center md:justify-start gap-10 mb-10'>
-						{challenges.data.map(
+						{challenges?.data?.map(
 							(challenge: Challenge): JSX.Element => (
 								<ChallengeCard key={challenge._id} challenge={challenge} />
 							)
 						)}
 					</div>
 
-					<div className='flex justify-center gap-2 mb-10'>
-						<button
-							onClick={prevPage}
-							disabled={page === 1}
-							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
-						>
-							<FaArrowLeft className='mx-auto' title='Previous' />
-						</button>
+					{totalPages > 1 && (
+						<div className='flex justify-center gap-2 mb-10'>
+							<button
+								onClick={prevPage}
+								disabled={page === 1}
+								className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-40'
+							>
+								<FaArrowLeft className='mx-auto' title='Previous' />
+							</button>
 
-						{totalPages &&
-							[...Array(totalPages)].map((_, index) => (
-								<button
-									key={index}
-									onClick={() => setPage(index + 1)}
-									disabled={isPreviousData}
-									className={`${
-										index + 1 === page
-											? 'bg-light cursor-default'
-											: 'bg-primary-100 enabled:hover:bg-primary-200'
-									} transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded disabled:opacity-60`}
-								>
-									{index + 1}
-								</button>
-							))}
+							{totalPages &&
+								[...Array(totalPages)].map((_, index) => (
+									<button
+										key={index}
+										onClick={() => setPage(index + 1)}
+										disabled={isPreviousData}
+										className={`${
+											index + 1 === page
+												? 'bg-light cursor-default'
+												: 'bg-primary-100 enabled:hover:bg-primary-200'
+										} transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded disabled:opacity-40`}
+									>
+										{index + 1}
+									</button>
+								))}
 
-						<button
-							onClick={nextPage}
-							disabled={page === totalPages}
-							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
-						>
-							<FaArrowRight className='mx-auto' title='Next' />
-						</button>
-					</div>
+							<button
+								onClick={nextPage}
+								disabled={page === totalPages}
+								className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-40'
+							>
+								<FaArrowRight className='mx-auto' title='Next' />
+							</button>
+						</div>
+					)}
 				</>
 			)}
 		</section>

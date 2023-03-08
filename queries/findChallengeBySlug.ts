@@ -1,23 +1,24 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
 
-function getAllChallenges() {
+function findChallengeBySlug(slug: string) {
 	return client.fetch(
 		groq`
-		*[_type == "challenge"] | order(_createdAt desc) {
+		*[_type == "challenge" && slug.current == $slug][0] {
 			_id,
 			title,
 			description,
 			blurb,
 			code,
-			features,
+			features[],
 			techStack[],
 			mainLanguage,
 			"slug": slug.current,
 			url
 		}
-	`
+	`,
+		{ slug }
 	);
 }
 
-export default getAllChallenges;
+export default findChallengeBySlug;

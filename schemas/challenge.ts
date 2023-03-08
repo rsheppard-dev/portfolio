@@ -1,7 +1,6 @@
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import tech from './tech';
 
-const challenge = defineType({
+export default defineType({
 	name: 'challenge',
 	type: 'document',
 	title: 'Challenges',
@@ -14,8 +13,7 @@ const challenge = defineType({
 		}),
 		defineField({
 			name: 'description',
-			type: 'array',
-			of: [defineArrayMember({ type: 'block' })],
+			type: 'blockContent',
 			title: 'Description',
 		}),
 		defineField({
@@ -39,7 +37,7 @@ const challenge = defineType({
 		defineField({
 			name: 'features',
 			type: 'array',
-			of: [{ type: 'string' }],
+			of: [defineArrayMember({ type: 'string' })],
 			title: 'Features',
 		}),
 		defineField({
@@ -50,20 +48,14 @@ const challenge = defineType({
 				defineArrayMember({
 					name: 'tech',
 					title: 'Tech',
-					type: 'string',
-					options: {
-						list: tech,
-					},
+					type: 'tech',
 				}),
 			],
 		}),
 		defineField({
 			title: 'Main Language',
 			name: 'mainLanguage',
-			type: 'string',
-			options: {
-				list: tech,
-			},
+			type: 'tech',
 		}),
 		defineField({
 			name: 'slug',
@@ -79,14 +71,5 @@ const challenge = defineType({
 			type: 'url',
 			title: 'Live Link',
 		}),
-		defineField({
-			name: 'createdAt',
-			type: 'datetime',
-			readOnly: true,
-			hidden: true,
-			initialValue: new Date().toISOString(),
-		}),
 	],
 });
-
-export default challenge;

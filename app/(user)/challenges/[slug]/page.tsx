@@ -3,39 +3,34 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import ChallengeFile from '../../../../components/ChallengeFile';
 import Challenge from '../../../../interfaces/Challenge';
-import getAllChallenges from '../../../../queries/getAllChallenges';
+import getAllSlugs from '../../../../queries/getAllSlugs';
+import findChallengeBySlug from '../../../../queries/findChallengeBySlug';
 
 export async function generateStaticParams() {
-	const challenges = await getAllChallenges();
+	const slugs = await getAllSlugs('challenge');
 
-	return challenges.map((challenge: Challenge) => ({
+	return slugs.map((challenge: Pick<Challenge, 'slug'>) => ({
 		slug: challenge.slug,
 	}));
 }
 
 async function ChallengePage({ params }: { params: { slug: string } }) {
-	const challenges = await getAllChallenges();
 	const { slug } = params;
+	const challenge = (await findChallengeBySlug(slug)) as Challenge;
 
-	const data = challenges.find(
-		(challenge: Challenge): Challenge | undefined => {
-			if (challenge.slug === slug) return challenge;
-		}
-	);
-
-	if (!data) notFound();
+	if (!challenge) notFound();
 
 	return (
 		<section className='min-h-screen flex flex-col'>
 			<h1 className='container mt-16 mb-5 font-primary text-light font-bold text-4xl'>
-				{data.title}
+				{challenge.title}
 			</h1>
 
 			<div className='container'>
 				<Breadcrumbs />
 			</div>
 
-			<ChallengeFile data={data} />
+			<ChallengeFile data={challenge} />
 		</section>
 	);
 }

@@ -1,5 +1,4 @@
 'use client';
-
 import { useOpenInWindow } from 'use-open-window';
 import { FaCheckSquare } from 'react-icons/fa';
 import { Tab } from '@headlessui/react';
@@ -8,6 +7,7 @@ import displayIcon from '../utils/displayIcon';
 import { PortableText } from '@portabletext/react';
 import ChallengeCode from './ChallengeCode';
 import Challenge from '../interfaces/Challenge';
+import SanityImage from './SanityImage';
 
 const ChallengeFile = ({ data }: { data: Challenge }) => {
 	const { description, code, features, techStack, url } = data;
@@ -50,7 +50,14 @@ const ChallengeFile = ({ data }: { data: Challenge }) => {
 								Challenge
 							</h3>
 							<div className='font-secondary text-dark prose max-w-none'>
-								<PortableText value={description} />
+								<PortableText
+									value={description}
+									components={{
+										types: {
+											image: SanityImage,
+										},
+									}}
+								/>
 							</div>
 						</section>
 
