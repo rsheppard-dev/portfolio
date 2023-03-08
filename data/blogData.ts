@@ -1,4 +1,5 @@
 import IBlog from '../interfaces/IBlog';
+import Image from '../interfaces/Image';
 
 const blogData: IBlog[] = [
 	{

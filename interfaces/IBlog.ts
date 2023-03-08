@@ -3,7 +3,7 @@ import Image from './Image';
 interface Blog {
 	title: string;
 	description: string;
-	image: Image;
+	image: any;
 	date: Date;
 	slug: string;
 }
