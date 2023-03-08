@@ -1,15 +1,20 @@
+import { PortableText } from '@portabletext/react';
+import { url } from 'inspector';
+
 import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
+import Project from '../interfaces/Project';
 
 import displayIcon from '../utils/displayIcon';
+import SanityImage from './SanityImage';
 
 const ProjectCard = ({
 	project,
 	rightAlign = true,
 }: {
-	project: any;
+	project: Project;
 	rightAlign?: boolean;
 }) => {
-	const { title, description, image, tech, links } = project;
+	const { title, description, logo, techStack, privateRepo, live } = project;
 
 	return (
 		<div
@@ -17,9 +22,13 @@ const ProjectCard = ({
 				rightAlign ? 'md:flex-row' : 'md:flex-row-reverse'
 			} justify-between gap-10 mb-20`}
 		>
-			<div className='flex items-center justify-center md:w-2/5 my-10 md:my-0'>
-				<div className='rounded-lg h-48 w-48 bg-red-500 rotate-45'></div>
-			</div>
+			<a
+				href={live}
+				target='_blank'
+				className='flex items-center justify-center md:w-2/5 my-10 md:my-0'
+			>
+				<SanityImage value={logo} />
+			</a>
 
 			<div className='md:w-3/5'>
 				<h3 className='mb-5 font-primary text-light font-bold text-xl'>
@@ -29,21 +38,28 @@ const ProjectCard = ({
 				<div className='flex flex-wrap gap-5 mb-5'>
 					<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'>
 						<span>Read Me</span>
-						<FaBook />
+						<FaBook title='View Read Me' />
 					</button>
-					<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'>
+					<button
+						disabled={privateRepo}
+						className='relative disabled:opacity-40 bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'
+					>
 						<span>Code</span>
-						<FaGithub />
+						<FaGithub title='Github Repo' />
 					</button>
-					<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'>
+					<a
+						href={live}
+						target='_blank'
+						className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'
+					>
 						<span>Live</span>
-						<FaLaptop />
-					</button>
+						<FaLaptop title='View Live Site' />
+					</a>
 				</div>
 
-				<p className='font-secondary text-light leading-loose mb-5'>
-					{description}
-				</p>
+				<div className='font-secondary text-light prose max-w-none mb-5'>
+					<PortableText value={description} />
+				</div>
 
 				<div className='flex gap-5 items-center mb-5'>
 					<h4 className='font-primary font-bold text-light whitespace-nowrap'>
@@ -53,7 +69,7 @@ const ProjectCard = ({
 				</div>
 
 				<div className='flex flex-wrap items-center gap-5 mb-5'>
-					{tech.map(
+					{techStack.map(
 						(t: string): JSX.Element => (
 							<div
 								key={t}

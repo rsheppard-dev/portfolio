@@ -2,6 +2,7 @@ import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 import { codeInput } from '@sanity/code-input';
 import { defineConfig } from 'sanity';
+import { markdownSchema } from 'sanity-plugin-markdown';
 
 import types from './schemas/index';
 
@@ -13,7 +14,7 @@ export const config = defineConfig({
 	dataset,
 	title: 'Sanity Portfolio',
 	basePath: '/admin',
-	plugins: [deskTool(), visionTool(), codeInput()],
+	plugins: [deskTool(), visionTool(), codeInput(), markdownSchema()],
 
 	schema: {
 		types,

@@ -1,7 +1,10 @@
 interface Image {
-	src: string;
-	width: number | string;
-	height: number | string;
+	_type: 'image';
+	alt: string;
+	asset: {
+		_ref: string;
+		_type: 'reference';
+	};
 }
 
 export default Image;

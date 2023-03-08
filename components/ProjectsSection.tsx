@@ -1,14 +1,16 @@
 import ProjectCard from './ProjectCard';
-import projectData from '../data/projectData';
+import getProjects from '../queries/getProjects';
+import Project from '../interfaces/Project';
 
-const ProjectsSection = () => {
+async function ProjectsSection() {
+	const { data: projects }: { data: Project[] } = await getProjects(3);
 	return (
 		<section className='container py-16'>
 			<h2 className='mb-16 font-primary text-light font-bold text-4xl'>
 				Projects
 			</h2>
 
-			{projectData.map(
+			{projects.map(
 				(project, index): JSX.Element => (
 					<ProjectCard
 						key={project.title}
@@ -19,6 +21,6 @@ const ProjectsSection = () => {
 			)}
 		</section>
 	);
-};
+}
 
 export default ProjectsSection;

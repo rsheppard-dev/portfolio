@@ -1,12 +1,12 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
 
-function getAllSlugs(type: string = '') {
+function getAllSlugs(type: string) {
 	return client.fetch(
 		groq`
-		*[_type == 'challenge'] {
+		*[_type == $type] {
 			"slug": slug.current
-		}
+		}, {type}
 	`
 	);
 }

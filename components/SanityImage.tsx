@@ -10,7 +10,7 @@ export default function SanityImage({ value }: { value: SanityAsset }) {
 		<div className=''>
 			<Image
 				src={urlFor(value).fit('max').auto('format').url()}
-				alt={value.alt || ' '}
+				alt={value?.alt}
 				width={400}
 				height={400}
 			/>

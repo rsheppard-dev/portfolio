@@ -1,4 +1,4 @@
-import { defineArrayMember, defineType } from 'sanity';
+import { defineArrayMember, defineType, defineField } from 'sanity';
 
 export default defineType({
 	name: 'blockContent',
@@ -13,6 +13,13 @@ export default defineType({
 			options: {
 				hotspot: true,
 			},
+			fields: [
+				defineField({
+					name: 'alt',
+					title: 'Alt Text',
+					type: 'string',
+				}),
+			],
 		}),
 		defineArrayMember({
 			name: 'code',
