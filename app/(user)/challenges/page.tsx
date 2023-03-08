@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { useQuery } from 'react-query';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import ChallengeCard from '../../../components/ChallengeCard';
@@ -33,6 +34,7 @@ function Challenges() {
 	function prevPage() {
 		setPage(prev => prev - 1);
 	}
+
 	const totalPages = Math.ceil(
 		parseInt(challenges?.totalResults) / parseInt(challenges?.resultsPerPage)
 	);
@@ -68,39 +70,37 @@ function Challenges() {
 						)}
 					</div>
 
-					<div className='flex justify-between mb-10'>
+					<div className='flex justify-center gap-2 mb-10'>
 						<button
 							onClick={prevPage}
 							disabled={page === 1}
-							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold px-3 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
+							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
 						>
-							Previous
+							<FaArrowLeft className='mx-auto' title='Previous' />
 						</button>
 
-						<div className='flex justify-center gap-2'>
-							{totalPages &&
-								[...Array(totalPages)].map((_, index) => (
-									<button
-										key={index}
-										onClick={() => setPage(index + 1)}
-										disabled={isPreviousData}
-										className={`${
-											index + 1 === page
-												? 'bg-light cursor-default'
-												: 'bg-primary-100 enabled:hover:bg-primary-200'
-										} transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded disabled:opacity-60`}
-									>
-										{index + 1}
-									</button>
-								))}
-						</div>
+						{totalPages &&
+							[...Array(totalPages)].map((_, index) => (
+								<button
+									key={index}
+									onClick={() => setPage(index + 1)}
+									disabled={isPreviousData}
+									className={`${
+										index + 1 === page
+											? 'bg-light cursor-default'
+											: 'bg-primary-100 enabled:hover:bg-primary-200'
+									} transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded disabled:opacity-60`}
+								>
+									{index + 1}
+								</button>
+							))}
 
 						<button
 							onClick={nextPage}
 							disabled={page === totalPages}
-							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold px-3 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
+							className='bg-primary-100 transition-colors text-primary-300 font-primary font-bold w-10 h-10 rounded enabled:hover:bg-primary-200 disabled:opacity-60'
 						>
-							Next
+							<FaArrowRight className='mx-auto' title='Next' />
 						</button>
 					</div>
 				</>
