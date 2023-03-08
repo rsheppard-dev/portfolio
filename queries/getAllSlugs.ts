@@ -6,8 +6,9 @@ function getAllSlugs(type: string) {
 		groq`
 		*[_type == $type] {
 			"slug": slug.current
-		}, {type}
-	`
+		}
+	`,
+		{ type }
 	);
 }
 
