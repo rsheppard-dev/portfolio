@@ -1,5 +1,4 @@
 import { PortableText } from '@portabletext/react';
-import { url } from 'inspector';
 
 import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
 import Project from '../interfaces/Project';

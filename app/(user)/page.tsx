@@ -9,6 +9,7 @@ export default function Home() {
 		<>
 			<HeroSection />
 			<BlogSection />
+			{/* @ts-expect-error Server Component */}
 			<ProjectsSection />
 			{/* @ts-expect-error Server Component */}
 			<ChallengesSection />
