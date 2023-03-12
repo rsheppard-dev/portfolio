@@ -11,7 +11,7 @@ interface Project {
 	logo: Image;
 	description: Block[];
 	techStack: string[];
-	readMe: any;
+	readMe: string;
 	slug: string;
 	privateRepo: boolean;
 	github: string;
