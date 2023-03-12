@@ -1,9 +1,10 @@
 import { PortableText } from '@portabletext/react';
 
-import { FaBook, FaLaptop, FaGithub } from 'react-icons/fa';
+import { FaLaptop, FaGithub } from 'react-icons/fa';
 import Project from '../interfaces/Project';
 
 import displayIcon from '../utils/displayIcon';
+import ReadMe from './ReadMe';
 import SanityImage from './SanityImage';
 
 const ProjectCard = ({
@@ -13,7 +14,8 @@ const ProjectCard = ({
 	project: Project;
 	rightAlign?: boolean;
 }) => {
-	const { title, description, logo, techStack, privateRepo, live } = project;
+	const { title, description, logo, readMe, techStack, privateRepo, live } =
+		project;
 
 	return (
 		<div
@@ -35,10 +37,7 @@ const ProjectCard = ({
 				</h3>
 
 				<div className='flex flex-wrap gap-5 mb-5'>
-					<button className='bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'>
-						<span>Read Me</span>
-						<FaBook title='View Read Me' />
-					</button>
+					<ReadMe readMe={readMe} />
 					<button
 						disabled={privateRepo}
 						className='relative disabled:opacity-40 bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'
