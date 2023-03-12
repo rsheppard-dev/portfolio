@@ -19,7 +19,7 @@ const About = () => {
 						<h2 className='font-primary text-primary-300 font-bold text-2xl'>
 							Hi there, I'm Roy 👍
 						</h2>
-						<p>
+						<p className='font-secondary text-lg'>
 							I am a creative and enthusiastic web developer. I live in Watford,
 							England with my wife and four sons.
 						</p>

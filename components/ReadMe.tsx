@@ -60,6 +60,14 @@ export default function ReadMe({ readMe }: { readMe: string }) {
 											<GrClose title='Close Read Me' />
 										</button>
 										<ReactMarkdown>{readMe}</ReactMarkdown>
+										<div className='flex justify-end'>
+											<button
+												onClick={closeModal}
+												className='block mt-2 bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold w-fit'
+											>
+												Close
+											</button>
+										</div>
 									</div>
 								</Dialog.Panel>
 							</Transition.Child>
