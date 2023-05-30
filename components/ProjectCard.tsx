@@ -14,7 +14,7 @@ const ProjectCard = ({
 	project: Project;
 	rightAlign?: boolean;
 }) => {
-	const { title, description, logo, readMe, techStack, privateRepo, live } =
+	const { title, description, logo, readMe, techStack, privateRepo, live, github } =
 		project;
 
 	return (
@@ -38,13 +38,12 @@ const ProjectCard = ({
 
 				<div className='flex flex-wrap gap-5 mb-5'>
 					<ReadMe readMe={readMe} />
-					<button
-						disabled={privateRepo}
-						className='relative disabled:opacity-40 bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1'
+					<a href={privateRepo ? '#' : github} target="_blank"
+						className={`${privateRepo && 'cursor-not-allowed opacity-40'} relative bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1`}
 					>
 						<span>Code</span>
 						<FaGithub title='Github Repo' />
-					</button>
+					</a>
 					<a
 						href={live}
 						target='_blank'

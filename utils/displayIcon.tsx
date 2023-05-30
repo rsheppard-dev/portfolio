@@ -8,6 +8,7 @@ import {
 	SiCsharp,
 	SiTailwindcss,
 	SiNextdotjs,
+	SiDotnet,
 } from 'react-icons/si';
 
 // function that takes a tech name and converts it to an icon
@@ -48,6 +49,13 @@ const displayIcon = (
 		case 'C#':
 			return (
 				<SiCsharp
+					title={tech}
+					className={`${className} ${colour && 'text-purple-500'}`}
+				/>
+			);
+		case '.NET':
+			return (
+				<SiDotnet
 					title={tech}
 					className={`${className} ${colour && 'text-purple-500'}`}
 				/>
