@@ -9,6 +9,7 @@ import {
 	SiTailwindcss,
 	SiNextdotjs,
 	SiDotnet,
+	SiNodedotjs,
 } from 'react-icons/si';
 
 // function that takes a tech name and converts it to an icon
@@ -86,6 +87,13 @@ const displayIcon = (
 				<SiBootstrap
 					title={tech}
 					className={`${className} ${colour && 'text-purple-500'}`}
+				/>
+			);
+		case 'NodeJS':
+			return (
+				<SiNodedotjs
+					title={tech}
+					className={`${className} ${colour && 'text-green-500'}`}
 				/>
 			);
 		default:

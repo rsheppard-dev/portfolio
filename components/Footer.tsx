@@ -43,7 +43,7 @@ const Footer = () => {
 							/>
 						</a>
 
-						<a
+						{/* <a
 							target='_blank'
 							href='https://www.youtube.com/@roysheppard-dev'
 							rel='noopener noreferrer'
@@ -52,7 +52,7 @@ const Footer = () => {
 								title='YouTube'
 								className='text-light text-3xl opacity-60 hover:opacity-100 transition-opacity'
 							/>
-						</a>
+						</a> */}
 					</div>
 
 					<Link href='/'>

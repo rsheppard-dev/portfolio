@@ -60,7 +60,7 @@ const HeroSection = () => {
 						/>
 					</a>
 
-					<a
+					{/* <a
 						target='_blank'
 						href='https://www.youtube.com/@roysheppard-dev'
 						rel='noopener noreferrer'
@@ -69,7 +69,7 @@ const HeroSection = () => {
 							title='YouTube'
 							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
-					</a>
+					</a> */}
 				</div>
 			</div>
 
