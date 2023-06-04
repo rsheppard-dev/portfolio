@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 const ContactSection = ({ h1 = false }: { h1?: boolean }) => {
 	return (
-		<section className='container pt-16 pb-10 relative bg-pink-500 h-full'>
+		<section className='container pt-16 pb-10 relative'>
 			{h1 ? (
 				<>
 					<h1 className='mb-5 font-primary text-light font-bold text-4xl'>
