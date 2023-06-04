@@ -9,7 +9,7 @@ import MobileMenu from './MobileMenu';
 
 const Header = () => {
 	return (
-		<header className='container'>
+		<header className='container z-10'>
 			<div className='w-full flex items-center justify-center md:items-start md:justify-between gap-2'>
 				<MobileMenu />
 
