@@ -1,4 +1,4 @@
-import BlogSection from '../../components/BlogSection';
+import AboutSection from '../../components/AboutSection';
 import ChallengesSection from '../../components/ChallengesSection';
 import ContactSection from '../../components/ContactSection';
 import HeroSection from '../../components/HeroSection';
@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<HeroSection />
-			<BlogSection />
+			<AboutSection />
 			{/* @ts-expect-error Server Component */}
 			<ProjectsSection />
 			{/* @ts-expect-error Server Component */}
