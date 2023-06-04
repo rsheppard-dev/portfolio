@@ -16,14 +16,48 @@ const About = () => {
 
 			<article className='bg-light min-w-screen'>
 				<div className='container py-16'>
-					<span className='text-dark prose max-w-none'>
-						<h2 className='font-primary text-primary-300 font-bold text-2xl'>
-							Hi there, I'm Roy 👍
-						</h2>
-						<p className='font-secondary text-lg'>
-							I am a creative and enthusiastic web developer. I live in Watford,
-							England with my wife and four sons.
-						</p>
+					<div className='text-dark prose max-w-none'>
+						<div className='flex flex-col gap-5 md:flex-row md:justify-between'>
+							<div className='md:w-2/3 font-primary text-dark'>
+								<h2 className='font-primary text-primary-300 font-bold text-2xl'>
+									Hi there, I'm Roy 👍
+								</h2>
+								<p>
+									I am a full-stack web developer who lives in Watford with my
+									wife Emily and four boys, Jacob, Dexter, Teddy and Ronnie.
+								</p>
+
+								<h2 className='font-primary text-primary-300 font-bold text-2xl'>
+									How did I get into web development?
+								</h2>
+
+								<p>
+									I have been programming for over two years now and taught
+									myself by going through Free Code Camp's cirriculum, multiple
+									Udemy courses and Coder Foundry's self-paced course.
+								</p>
+								<p>
+									I began doing freelance projects for local businesses via{' '}
+									<a
+										href='https://roysheppard.digital'
+										target='_blank'
+										className='text-primary-300 hover:text-primary-200 transition-color'
+									>
+										Roy Sheppard Digital
+									</a>{' '}
+									from standard marketing sites, to more complex sites including
+									full user registation systems, connecting to third party APIs
+									and other custom functionality.
+								</p>
+							</div>
+							<figure className='overflow-hidden'>
+								<img
+									src='https://res.cloudinary.com/roy-sheppard-digital/image/upload/v1685882193/roy_sheppard_family_vk9i12.jpg'
+									alt='Roy Sheppard Family Photo'
+									className='position-cover rounded-lg shadow-md'
+								/>
+							</figure>
+						</div>
 
 						<h2 className='font-primary text-primary-300 font-bold text-2xl'>
 							Some of the tech I love working with
@@ -40,6 +74,12 @@ const About = () => {
 								{displayIcon('CSS3', 'text-dark text-5xl', true)}
 								<span className='bg-primary-300 font-primary px-2 py-1 rounded text-light text-sm'>
 									CSS3
+								</span>
+							</div>
+							<div className='flex flex-col items-center gap-3'>
+								{displayIcon('TailwindCSS', 'text-dark text-5xl', true)}
+								<span className='bg-primary-300 font-primary px-2 py-1 rounded text-light text-sm'>
+									TailwindCSS
 								</span>
 							</div>
 							<div className='flex flex-col items-center gap-3'>
@@ -85,11 +125,7 @@ const About = () => {
 								</span>
 							</div>
 						</div>
-
-						<h2 className='font-primary text-primary-300 font-bold text-2xl'>
-							How did I get into web development?
-						</h2>
-					</span>
+					</div>
 				</div>
 			</article>
 		</section>
