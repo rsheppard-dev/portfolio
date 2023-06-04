@@ -20,9 +20,9 @@ const HeroSection = () => {
 						>
 							View My Work
 						</Link>
-						<button className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
+						<a href="/cv.pdf" target="_blank" className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
 							Download CV
-						</button>
+						</a>
 					</div>
 				</div>
 
