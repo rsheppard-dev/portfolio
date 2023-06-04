@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 const ContactSection = ({ h1 = false }: { h1?: boolean }) => {
 	return (
-		<section className='container pt-16 pb-10 relative'>
+		<section className='container pt-16 pb-10 relative bg-pink-500 h-full'>
 			{h1 ? (
 				<>
 					<h1 className='mb-5 font-primary text-light font-bold text-4xl'>
@@ -41,7 +41,7 @@ const ContactSection = ({ h1 = false }: { h1?: boolean }) => {
 					</div>
 
 					<div className='hidden xs:block absolute bottom-0 right-5 lg:right-20 xl:right-32'>
-						<div className='relative object-contain object-bottom w-[200px] h-[200px] lg:w-[220px] lg:h-[220px] xl:w-[250px] xl:h-[250px]'>
+						<div className='object-contain object-bottom w-[200px] h-[200px] lg:w-[220px] lg:h-[220px] xl:w-[250px] xl:h-[250px]'>
 							<Image
 								src='/img/roy-sheppard-contact.png'
 								alt='Roy Sheppard - Contact Me'
