@@ -14,4 +14,6 @@ const Blog = () => {
 	);
 };
 
+export const revalidate = 60;
+
 export default Blog;

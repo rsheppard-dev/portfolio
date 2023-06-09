@@ -76,4 +76,6 @@ function Challenges() {
 	);
 }
 
+export const revalidate = 60;
+
 export default Challenges;

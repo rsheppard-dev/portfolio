@@ -35,4 +35,6 @@ async function ChallengePage({ params }: { params: { slug: string } }) {
 	);
 }
 
+export const revalidate = 60;
+
 export default ChallengePage;
