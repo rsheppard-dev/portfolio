@@ -9,7 +9,7 @@ const HeroSection = () => {
 		<section className='container pt-16 pb-10 md:pb-20 relative'>
 			<div className='flex flex-col md:flex-row justify-between gap-10'>
 				<div className='w-full lg:w-3/5'>
-					<h1 className='text-center md:text-start mb-10 text-4xl md:text-5xl text-light font-primary font-bold subpixel-antialiased leading-snug md:leading-snug'>
+					<h1 className='balance text-center md:text-start mb-10 text-4xl md:text-5xl text-light font-primary font-bold subpixel-antialiased leading-snug md:leading-snug'>
 						I am a full-stack developer that uses code to build cool and amazing
 						things!
 					</h1>
