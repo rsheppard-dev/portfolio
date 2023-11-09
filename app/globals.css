@@ -13,6 +13,12 @@
 	}
 }
 
+@layer utilities {
+	.balance {
+		text-wrap: balance;
+	}
+}
+
 /* Firefox */
 .scrollbar {
 	scrollbar-width: thin;
