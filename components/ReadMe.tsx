@@ -4,7 +4,7 @@ import { useState, Fragment } from 'react';
 import { FaBook } from 'react-icons/fa';
 import { GrClose } from 'react-icons/gr';
 import { Dialog, Transition } from '@headlessui/react';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import Markdown from 'react-markdown';
 
 export default function ReadMe({ readMe }: { readMe: string }) {
 	const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +59,7 @@ export default function ReadMe({ readMe }: { readMe: string }) {
 										>
 											<GrClose title='Close Read Me' />
 										</button>
-										<ReactMarkdown>{readMe}</ReactMarkdown>
+										<Markdown>{readMe}</Markdown>
 										<div className='flex justify-end'>
 											<button
 												onClick={closeModal}

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 
 const HeroSection = () => {
 	return (
@@ -20,7 +21,11 @@ const HeroSection = () => {
 						>
 							View My Work
 						</Link>
-						<a href="/cv.pdf" target="_blank" className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'>
+						<a
+							href='/cv.pdf'
+							target='_blank'
+							className='bg-primary-100 hover:bg-primary-200 transition-colors text-primary-300 xs:text-lg md:text-xl font-semibold font-primary px-4 py-2 rounded-lg'
+						>
 							Download CV
 						</a>
 					</div>
@@ -54,8 +59,8 @@ const HeroSection = () => {
 						href='https://twitter.com/rsheppard_dev'
 						rel='noopener noreferrer'
 					>
-						<FaTwitter
-							title='Twitter'
+						<FaSquareXTwitter
+							title='X'
 							className='text-light text-4xl opacity-60 hover:opacity-100 transition-opacity'
 						/>
 					</a>

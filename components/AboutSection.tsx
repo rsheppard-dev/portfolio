@@ -1,46 +1,27 @@
-import displayIcon from "../utils/displayIcon";
+import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
+import getAboutContent from '../queries/getAboutContent';
+import displayIcon from '../utils/displayIcon';
+import About from '../interfaces/About';
 
-const AboutSection = () => {
+const AboutSection = async () => {
+	const { content }: About = await getAboutContent();
 	return (
 		<article className='bg-light min-w-screen'>
 			<div className='container py-16 space-y-4'>
 				<div className='grid md:block text-dark space-y-6 font-primary'>
-					<img
-						src='https://res.cloudinary.com/roy-sheppard-digital/image/upload/v1685882193/roy_sheppard_family_vk9i12.jpg'
-						alt='Roy Sheppard Family Photo'
-						className='order-last mt-6 md:mt-0 md:order-none float-right position-cover rounded-lg shadow-md md:w-72 mb-4 md:ml-4'
-					/>
+					<div className='relative overflow-hidden order-last mt-6 md:mt-0 md:order-none float-right rounded-lg shadow-md w-full h-96 md:w-72 mb-4 md:ml-4'>
+						<Image
+							src='https://res.cloudinary.com/roy-sheppard-digital/image/upload/v1685882193/roy_sheppard_family_vk9i12.jpg'
+							alt='Roy Sheppard Family Photo'
+							className='object-cover'
+							fill
+						/>
+					</div>
 
-					<h2 className='font-primary text-primary-300 font-bold text-2xl'>
-						Hi there, I'm Roy 👍
-					</h2>
-					<p>
-						I am a full-stack web developer who lives in Watford with my wife
-						Emily and four boys, Jacob, Dexter, Teddy and Ronnie.
-					</p>
-
-					<h2 className='font-primary text-primary-300 font-bold text-2xl'>
-						How did I get into web development?
-					</h2>
-
-					<p>
-						I have been programming for over two years now and taught myself by
-						going through Free Code Camp's cirriculum, multiple Udemy courses
-						and Coder Foundry's self-paced course.
-					</p>
-					<p>
-						I began doing freelance projects for local businesses via{' '}
-						<a
-							href='https://roysheppard.digital'
-							target='_blank'
-							className='text-primary-300 hover:text-primary-200 transition-color'
-						>
-							Roy Sheppard Digital
-						</a>{' '}
-						from standard marketing sites, to more complex sites including full
-						user registation systems, connecting to third party APIs and
-						whatever other custom functionality the client needed.
-					</p>
+					<div className='prose max-w-none w-full prose-h2:text-primary-300 prose-h2:font-primary prose-h2:font-bold prose-h2:text-2xl prose-p:font-secondary space-y-4'>
+						<PortableText value={content} />
+					</div>
 				</div>
 
 				<div className='space-y-4'>

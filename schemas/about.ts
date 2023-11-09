@@ -6,14 +6,16 @@ export default defineType({
 	type: 'document',
 	fields: [
 		defineField({
-			name: 'heading',
-			title: 'Heading',
-			type: 'string',
-		}),
-		defineField({
 			name: 'content',
+			type: 'blockContent',
 			title: 'Content',
-			type: 'text',
 		}),
 	],
+	preview: {
+		prepare() {
+			return {
+				title: 'About Page',
+			};
+		},
+	},
 });

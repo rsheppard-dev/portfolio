@@ -9,9 +9,9 @@ export default function Home() {
 		<>
 			<HeroSection />
 			<AboutSection />
-			{/* @ts-expect-error Server Component */}
+			{/* ts-expect-error Async Server Component */}
 			<ProjectsSection />
-			{/* @ts-expect-error Server Component */}
+			{/* ts-expect-error Async Server Component */}
 			<ChallengesSection />
 			<ContactSection />
 		</>

@@ -1,8 +1,5 @@
-'use client';
-
 import AboutSection from '../../../components/AboutSection';
 import Breadcrumbs from '../../../components/Breadcrumbs';
-import displayIcon from '../../../utils/displayIcon';
 
 const About = () => {
 	return (
@@ -14,7 +11,7 @@ const About = () => {
 
 				<Breadcrumbs />
 			</div>
-
+			{/* ts-expect-error Async Server Component */}
 			<AboutSection />
 		</section>
 	);
