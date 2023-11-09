@@ -17,7 +17,12 @@ function findChallengeBySlug(slug: string) {
 			url
 		}
 	`,
-		{ slug }
+		{ slug },
+		{
+			next: {
+				revalidate: 60,
+			},
+		}
 	);
 }
 

@@ -23,7 +23,12 @@ async function getChallenges(resultsPerPage = 3, page = 1) {
 		"totalResults": count(*[_type == "challenge"]),
 		}
 	`,
-		{ start, end }
+		{ start, end },
+		{
+			next: {
+				revalidate: 60,
+			},
+		}
 	);
 }
 

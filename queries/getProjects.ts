@@ -23,7 +23,12 @@ async function getProjects(resultsPerPage = 3, page = 1) {
 		"totalResults": count(*[_type == "project"]),
 		}
 	`,
-		{ start, end }
+		{ start, end },
+		{
+			next: {
+				revalidate: 60,
+			},
+		}
 	);
 }
 

@@ -8,7 +8,12 @@ function getAllSlugs(type: string) {
 			"slug": slug.current
 		}
 	`,
-		{ type }
+		{ type },
+		{
+			next: {
+				revalidate: 60,
+			},
+		}
 	);
 }
 
