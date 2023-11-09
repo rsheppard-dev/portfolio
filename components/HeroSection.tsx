@@ -84,7 +84,7 @@ const HeroSection = () => {
 					alt='Roy Sheppard'
 					fill
 					priority={true}
-					sizes='(min-width: 1024px) 40vw'
+					sizes='560px'
 					className='object-contain object-bottom'
 				/>
 			</div>

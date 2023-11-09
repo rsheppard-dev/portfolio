@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 
 import Breadcrumbs from '../../../../components/Breadcrumbs';
 import ChallengeFile from '../../../../components/ChallengeFile';
-import Challenge from '../../../../interfaces/Challenge';
+import { Challenge } from '../../../../interfaces/Challenge';
 import getAllSlugs from '../../../../queries/getAllSlugs';
 import findChallengeBySlug from '../../../../queries/findChallengeBySlug';
 

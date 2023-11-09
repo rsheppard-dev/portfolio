@@ -1,6 +1,6 @@
 import ProjectCard from './ProjectCard';
 import getProjects from '../queries/getProjects';
-import Project from '../interfaces/Project';
+import { Project } from '../interfaces/Project';
 
 async function ProjectsSection() {
 	const { data: projects }: { data: Project[] } = await getProjects(3);

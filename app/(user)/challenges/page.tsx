@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import ChallengeCard from '../../../components/ChallengeCard';
-import Challenge from '../../../interfaces/Challenge';
+import { Challenge } from '../../../interfaces/Challenge';
 import getChallenges from '../../../queries/getChallenges';
 import Paginatation from '../../../components/Paginatation';
 
@@ -28,7 +28,7 @@ function Challenges() {
 	});
 
 	const totalPages = Math.ceil(
-		parseInt(challenges?.totalResults) / resultsPerPage
+		parseInt(String(challenges?.totalResults)) / resultsPerPage
 	);
 
 	return (

@@ -1,7 +1,12 @@
 import Block from './Block';
 import Code from './Code';
 
-interface Challenge {
+export interface Challenges {
+	data: Challenge[];
+	totalResults: number;
+}
+
+export interface Challenge {
 	_createdAt: Date;
 	_id: string;
 	_rev: string;
@@ -17,5 +22,3 @@ interface Challenge {
 	slug: string;
 	url: string;
 }
-
-export default Challenge;

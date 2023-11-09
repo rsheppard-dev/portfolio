@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 import ChallengeCard from './ChallengeCard';
 import getChallenges from '../queries/getChallenges';
-import Challenge from '../interfaces/Challenge';
+import { Challenge } from '../interfaces/Challenge';
 
 const ChallengesSection = async () => {
 	const challenges = await getChallenges(3);

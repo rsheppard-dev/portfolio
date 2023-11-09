@@ -2,10 +2,9 @@ import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 import getAboutContent from '../queries/getAboutContent';
 import displayIcon from '../utils/displayIcon';
-import About from '../interfaces/About';
 
 const AboutSection = async () => {
-	const { content }: About = await getAboutContent();
+	const { content } = await getAboutContent();
 	return (
 		<article className='bg-light min-w-screen'>
 			<div className='container py-16 space-y-4'>
@@ -16,6 +15,7 @@ const AboutSection = async () => {
 							alt='Roy Sheppard Family Photo'
 							className='object-cover'
 							fill
+							sizes='(min-width: 780px) 288px, (min-width: 640px) 608px, (min-width: 420px) 343px, calc(75vw + 43px)'
 						/>
 					</div>
 

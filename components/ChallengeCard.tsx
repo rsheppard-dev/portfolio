@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Challenge from '../interfaces/Challenge';
+import { Challenge } from '../interfaces/Challenge';
 
 const ChallengeCard = ({ challenge }: { challenge: Challenge }) => {
 	const { title, description, blurb, mainLanguage, slug } = challenge;

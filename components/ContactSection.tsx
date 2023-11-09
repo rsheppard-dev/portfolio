@@ -46,7 +46,7 @@ const ContactSection = ({ h1 = false }: { h1?: boolean }) => {
 								src='/img/roy-sheppard-contact.png'
 								alt='Roy Sheppard - Contact Me'
 								fill
-								sizes='(max-width: 768px) 50vw, 33vw'
+								sizes='(min-width: 1280px) 250px, (min-width: 1040px) 220px, 200px'
 							/>
 						</div>
 					</div>

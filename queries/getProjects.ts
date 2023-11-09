@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
+import { Projects } from '../interfaces/Project';
 
-async function getProjects(resultsPerPage = 3, page = 1) {
+async function getProjects(resultsPerPage = 3, page = 1): Promise<Projects> {
 	const start = resultsPerPage * page - resultsPerPage;
 	const end = resultsPerPage * page;
 

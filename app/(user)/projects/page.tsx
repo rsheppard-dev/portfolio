@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import Breadcrumbs from '../../../components/Breadcrumbs';
-import Project from '../../../interfaces/Project';
+import { Project } from '../../../interfaces/Project';
 import getProjects from '../../../queries/getProjects';
 import ProjectCard from '../../../components/ProjectCard';
 import Paginatation from '../../../components/Paginatation';
@@ -27,7 +27,7 @@ const Projects = () => {
 	});
 
 	const totalPages = Math.ceil(
-		parseInt(projects?.totalResults) / resultsPerPage
+		parseInt(String(projects?.totalResults)) / resultsPerPage
 	);
 	return (
 		<section className='container'>

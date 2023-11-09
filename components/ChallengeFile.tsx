@@ -6,7 +6,7 @@ import { Tab } from '@headlessui/react';
 import displayIcon from '../utils/displayIcon';
 import { PortableText } from '@portabletext/react';
 import ChallengeCode from './ChallengeCode';
-import Challenge from '../interfaces/Challenge';
+import { Challenge } from '../interfaces/Challenge';
 import SanityImage from './SanityImage';
 
 const ChallengeFile = ({ data }: { data: Challenge }) => {

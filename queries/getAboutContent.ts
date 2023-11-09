@@ -1,18 +1,18 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
+import About from '../interfaces/About';
 
-async function getAboutContent() {
-	return (
-		client.fetch(
-			groq`
+async function getAboutContent(): Promise<About> {
+	return client.fetch(
+		groq`
         *[_type == "about"][0] {
                 content
         }
-    `
-		),
+    `,
+		{},
 		{
 			next: {
-				relvalidate: 60,
+				revalidate: 60,
 			},
 		}
 	);

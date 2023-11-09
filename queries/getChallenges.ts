@@ -1,7 +1,11 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
+import { Challenges } from '../interfaces/Challenge';
 
-async function getChallenges(resultsPerPage = 3, page = 1) {
+async function getChallenges(
+	resultsPerPage = 3,
+	page = 1
+): Promise<Challenges> {
 	const start = resultsPerPage * page - resultsPerPage;
 	const end = resultsPerPage * page;
 

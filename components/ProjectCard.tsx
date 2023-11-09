@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 
 import { FaLaptop, FaGithub } from 'react-icons/fa';
-import Project from '../interfaces/Project';
+import { Project } from '../interfaces/Project';
 
 import displayIcon from '../utils/displayIcon';
 import ReadMe from './ReadMe';
@@ -14,8 +14,16 @@ const ProjectCard = ({
 	project: Project;
 	rightAlign?: boolean;
 }) => {
-	const { title, description, logo, readMe, techStack, privateRepo, live, github } =
-		project;
+	const {
+		title,
+		description,
+		logo,
+		readMe,
+		techStack,
+		privateRepo,
+		live,
+		github,
+	} = project;
 
 	return (
 		<div
@@ -38,8 +46,12 @@ const ProjectCard = ({
 
 				<div className='flex flex-wrap gap-5 mb-5'>
 					<ReadMe readMe={readMe} />
-					<a href={github} target="_blank"
-						className={`${privateRepo && 'pointer-events-none opacity-40'} relative bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1`}
+					<a
+						href={github}
+						target='_blank'
+						className={`${
+							privateRepo && 'pointer-events-none opacity-40'
+						} relative bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1`}
 					>
 						<span>Code</span>
 						<FaGithub title='Github Repo' />

@@ -19,7 +19,7 @@ const Header = () => {
 							src='/img/roy-sheppard-mark.png'
 							alt='Roy Sheppard Mark'
 							fill
-							sizes='(max-width: 768px) 50vw, 33vw'
+							sizes='64px'
 							className='object-contain'
 						/>
 					</div>

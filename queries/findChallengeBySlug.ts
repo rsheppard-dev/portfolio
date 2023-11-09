@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity';
 import { client } from '../server/sanity.client';
+import { Challenge } from '../interfaces/Challenge';
 
-function findChallengeBySlug(slug: string) {
+function findChallengeBySlug(slug: string): Promise<Challenge> {
 	return client.fetch(
 		groq`
 		*[_type == "challenge" && slug.current == $slug][0] {
