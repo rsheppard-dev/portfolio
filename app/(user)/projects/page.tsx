@@ -39,7 +39,7 @@ const Projects = () => {
 
 			{isLoading ? (
 				<h2 className='mt-16 mb-5 font-primary text-light font-bold text-xl'>
-					Loading challenges...
+					Loading projects...
 				</h2>
 			) : isError ? (
 				<>
