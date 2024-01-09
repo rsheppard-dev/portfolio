@@ -78,7 +78,7 @@ const ProjectCard = ({
 				</div>
 
 				<div className='flex flex-wrap items-center gap-5 mb-5'>
-					{techStack.map(
+					{techStack?.map(
 						(t: string): JSX.Element => (
 							<div
 								key={t}
