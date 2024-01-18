@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType, validation } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
 	name: 'project',

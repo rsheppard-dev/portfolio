@@ -1,6 +1,8 @@
 import ProjectCard from './ProjectCard';
 import getProjects from '../queries/getProjects';
 import { Project } from '../interfaces/Project';
+import Link from 'next/link';
+import { FaArrowRight } from 'react-icons/fa';
 
 async function ProjectsSection() {
 	const { data: projects }: { data: Project[] } = await getProjects(3);
@@ -19,6 +21,15 @@ async function ProjectsSection() {
 					/>
 				)
 			)}
+
+			<div className='flex justify-end w-full'>
+				<Link
+					href='/projects'
+					className='text-sm bg-primary-100 hover:bg-primary-200 transition-colors text-secondary-300 rounded-md px-3 py-2 font-primary font-semibold whitespace-nowrap flex gap-2 items-center'
+				>
+					View All <FaArrowRight title='View All Projects' />
+				</Link>
+			</div>
 		</section>
 	);
 }
