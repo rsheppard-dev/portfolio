@@ -16,16 +16,17 @@ const validationSchema = yup.object({
 		.string()
 		.email('That is not a valid email address.')
 		.required('Email is a required field.'),
-	phone: yup
-		.string()
-		.matches(phoneRegex, {
-			message: 'That is not a valid phone number.',
-			excludeEmptyString: true,
-		}),
+	phone: yup.string().matches(phoneRegex, {
+		message: 'That is not a valid phone number.',
+		excludeEmptyString: true,
+	}),
 	message: yup
 		.string()
 		.min(10, 'Your message must consist of at least 10 characters.')
 		.required('Message is a required field.'),
 });
+
+// make interface from yup schema
+export type ContactFormValues = yup.InferType<typeof validationSchema>;
 
 export default validationSchema;

@@ -7,15 +7,6 @@ import { useFormik } from 'formik';
 import FormLabel from './FormLabel';
 import validationSchema from '../schemas/validationSchema';
 
-interface FormData {
-	[key: string]: string;
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone: string;
-	message: string;
-}
-
 const ContactForm = () => {
 	const [isSent, setIsSent] = useState(false);
 	const id = useId();
@@ -33,6 +24,7 @@ const ContactForm = () => {
 		initialValues: {
 			firstName: '',
 			lastName: '',
+			companyName: '',
 			email: '',
 			phone: '',
 			message: '',
@@ -109,6 +101,10 @@ const ContactForm = () => {
 						{errors.lastName}
 					</div>
 				) : null}
+			</div>
+
+			<div className='hidden invisible'>
+				<input type='text' name='companyName' />
 			</div>
 
 			<div className='flex flex-col gap-2 col-span-2 xs:col-span-1'>
