@@ -4,6 +4,7 @@ import Footer from '../../components/Footer';
 import Providers from '../../components/Providers';
 import { Poppins, Source_Sans_3 } from 'next/font/google';
 import { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const poppins = Poppins({
 	subsets: ['latin-ext'],
