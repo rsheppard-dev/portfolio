@@ -7,14 +7,14 @@ export async function POST(req: NextRequest) {
 		await req.json();
 
 	// if honeypot field has value message is spam
-	// if (companyName.length > 0) {
-	// 	return NextResponse.json({
-	// 		status: 400,
-	// 		body: {
-	// 			error: 'Message is spam.',
-	// 		},
-	// 	});
-	// }
+	if (companyName.length > 0) {
+		return NextResponse.json({
+			status: 400,
+			body: {
+				error: 'Message is spam.',
+			},
+		});
+	}
 
 	const resend = new Resend(process.env.RESEND_API_KEY);
 
