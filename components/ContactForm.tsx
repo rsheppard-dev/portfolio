@@ -20,12 +20,6 @@ const ContactForm = () => {
 	const [isSent, setIsSent] = useState(false);
 	const id = useId();
 
-	const encode = (data: FormData): string => {
-		return Object.keys(data)
-			.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-			.join('&');
-	};
-
 	const {
 		values,
 		handleBlur,
@@ -46,10 +40,10 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				await fetch('/', {
+				await fetch('/api/contact', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-					body: encode({ 'form-name': 'contact-form', ...values }),
+					body: JSON.stringify(values),
 				});
 				resetForm();
 				setIsSent(true);
@@ -60,7 +54,6 @@ const ContactForm = () => {
 	});
 	return (
 		<form
-			name='contact-form'
 			onSubmit={handleSubmit}
 			method='POST'
 			className='grow grid grid-cols-2 gap-5'
