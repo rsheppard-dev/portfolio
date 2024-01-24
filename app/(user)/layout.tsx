@@ -5,6 +5,7 @@ import Providers from '../../components/Providers';
 import { Poppins, Source_Sans_3 } from 'next/font/google';
 import { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
 	subsets: ['latin-ext'],
@@ -79,6 +80,7 @@ export default function RootLayout({
 					<Header />
 					<main className='flex-grow'>{children}</main>
 					<Footer />
+					<Analytics />
 					<SpeedInsights />
 				</Providers>
 			</body>
