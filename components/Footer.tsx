@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
-
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 import { Logo } from './SVGs';
 
 const Footer = () => {
@@ -37,7 +37,7 @@ const Footer = () => {
 							href='https://twitter.com/rsheppard_dev'
 							rel='noopener noreferrer'
 						>
-							<FaTwitter
+							<FaSquareXTwitter
 								title='Twitter'
 								className='text-light text-3xl opacity-60 hover:opacity-100 transition-opacity'
 							/>
@@ -60,7 +60,7 @@ const Footer = () => {
 					</Link>
 
 					<div className='text-light font-secondary sm:order-first'>
-						© 2023 Roy Sheppard
+						© {new Date().getFullYear()} Roy Sheppard
 					</div>
 				</div>
 			</div>
