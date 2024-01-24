@@ -10,15 +10,13 @@ export async function POST(req: NextRequest) {
 	if (companyName.length > 0) {
 		return NextResponse.json({
 			status: 400,
-			body: {
-				error: 'Message is spam.',
-			},
+			message: 'Message is suspected to be spam.',
 		});
 	}
 
 	const resend = new Resend(process.env.RESEND_API_KEY);
 
-	resend.emails.send({
+	const { data, error } = await resend.emails.send({
 		from: 'My Portfolio <noreply@roysheppard.dev>',
 		reply_to: email,
 		to: 'me@roysheppard.dev',
@@ -29,10 +27,15 @@ export async function POST(req: NextRequest) {
 		}\nMessage: ${message}`,
 	});
 
+	if (error) {
+		return NextResponse.json({
+			status: 400,
+			...error,
+		});
+	}
+
 	return NextResponse.json({
 		status: 200,
-		body: {
-			message: 'Message sent successfully.',
-		},
+		...data,
 	});
 }

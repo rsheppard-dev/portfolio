@@ -9,6 +9,7 @@ import validationSchema from '../schemas/validationSchema';
 
 const ContactForm = () => {
 	const [isSent, setIsSent] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 	const id = useId();
 
 	const {
@@ -32,11 +33,18 @@ const ContactForm = () => {
 		validationSchema,
 		onSubmit: async values => {
 			try {
-				await fetch('/api/contact', {
+				const response = await fetch('/api/contact', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 					body: JSON.stringify(values),
 				});
+				const data = await response.json();
+
+				if (data.status !== 200) {
+					setError(data.message);
+					return;
+				}
+
 				resetForm();
 				setIsSent(true);
 			} catch (e) {
@@ -189,6 +197,12 @@ const ContactForm = () => {
 				<div className='bg-primary-100 font-secondary font-semibold rounded-lg p-5 col-span-2'>
 					Thank you for getting in touch. Your message has been successfully
 					sent and I will get back to you as soon as possible!
+				</div>
+			)}
+
+			{error && (
+				<div className='bg-red-100 font-secondary font-semibold rounded-lg p-5 col-span-2'>
+					Error: Failed to send message. {error}
 				</div>
 			)}
 		</form>
