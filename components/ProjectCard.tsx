@@ -51,7 +51,7 @@ const ProjectCard = ({
 						target='_blank'
 						className={`${
 							privateRepo && 'pointer-events-none opacity-40'
-						} relative bg-secondary-100 enabled:hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1`}
+						} relative bg-secondary-100 hover:bg-secondary-200 transition-colors text-secondary-300 rounded-lg px-3 py-2 font-primary font-semibold flex items-center gap-1`}
 					>
 						<span>Code</span>
 						<FaGithub title='Github Repo' />
