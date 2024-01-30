@@ -1,0 +1,31 @@
+name: Build & Push to Azure Container Resistry
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+jobs:
+  buid:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Login to Azure Container Registry
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.ACR_ENDPOINT }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and Push
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          build-args: |
+            NEXT_PUBLIC_SANITY_PROJECT_ID=${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+            NEXT_PUBLIC_SANITY_DATASET=${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+            NEXT_PUBLIC_SANITY_API_VERSION=${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
+            SANITY_AUTH_TOKEN=${{ secrets.SANITY_AUTH_TOKEN }}
+            RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+          tags: ${{ secrets.ACR_ENDPOINT }}/portfolio:latest
+          file: ./Dockerfile
