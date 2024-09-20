@@ -9,7 +9,7 @@ async function getProjects(resultsPerPage = 3, page = 1): Promise<Projects> {
 	return client.fetch(
 		groq`
 		{
-			"data": *[_type == "project"] | order(_createdAt desc) [$start...$end] {
+			"data": *[_type == "project"] | order(orderRank) [$start...$end] {
 			_id,
 			title,
 			"slug": slug.current,
