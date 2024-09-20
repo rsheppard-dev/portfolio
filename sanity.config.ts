@@ -3,6 +3,11 @@ import { visionTool } from '@sanity/vision';
 import { codeInput } from '@sanity/code-input';
 import { defineConfig } from 'sanity';
 import { markdownSchema } from 'sanity-plugin-markdown';
+import {
+	filteredDocumentListItems,
+	singletonDocumentListItems,
+	singletonTools,
+} from 'sanity-plugin-singleton-tools';
 
 import types from './schemas/index';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
@@ -18,17 +23,16 @@ export const config = defineConfig({
 	plugins: [
 		structureTool({
 			structure: (S, context) => {
-				// Get all document types
-				const documentTypes = S.documentTypeListItems();
-
 				// Filter out the 'project' document type
-				const filteredDocumentTypes = documentTypes.filter(
-					item => item.getId() !== 'project'
-				);
+				const filteredDocumentTypes = filteredDocumentListItems({
+					S,
+					context,
+				}).filter(item => item.getId() !== 'project');
 
 				return S.list()
 					.title('Content')
 					.items([
+						...singletonDocumentListItems({ S, context }),
 						...filteredDocumentTypes,
 						orderableDocumentListDeskItem({
 							type: 'project',
@@ -42,6 +46,7 @@ export const config = defineConfig({
 		visionTool(),
 		codeInput(),
 		markdownSchema(),
+		singletonTools(),
 	],
 
 	schema: {

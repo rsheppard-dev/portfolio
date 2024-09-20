@@ -38,6 +38,7 @@
 		"resend": "^3.5.0",
 		"sanity": "^3.57.4",
 		"sanity-plugin-markdown": "^4.1.2",
+		"sanity-plugin-singleton-tools": "^1.1.0",
 		"sharp": "^0.33.5",
 		"typescript": "5.3.3",
 		"use-open-window": "^1.5.2",

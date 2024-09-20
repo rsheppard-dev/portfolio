@@ -92,6 +92,9 @@ dependencies:
   sanity-plugin-markdown:
     specifier: ^4.1.2
     version: 4.1.2(easymde@2.18.0)(react-dom@18.2.0)(react-is@18.3.1)(react@18.2.0)(sanity@3.57.4)(styled-components@6.1.13)
+  sanity-plugin-singleton-tools:
+    specifier: ^1.1.0
+    version: 1.1.0(react-dom@18.2.0)(react@18.2.0)(sanity@3.57.4)
   sharp:
     specifier: ^0.33.5
     version: 0.33.5
@@ -9357,6 +9360,21 @@ packages:
     transitivePeerDependencies:
       - react-dom
       - react-is
+    dev: false
+
+  /sanity-plugin-singleton-tools@1.1.0(react-dom@18.2.0)(react@18.2.0)(sanity@3.57.4):
+    resolution: {integrity: sha512-Z/AXCVBJ/Gc8RgwKX2GzfaKMSWJ7d9ycWfNSFTduhiBMFyJdjwLIK2Zh6eyl3Ctl7y6LiIEwJ/4VD9rx3F2WAw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: ^18
+      sanity: ^3
+    dependencies:
+      '@sanity/icons': 2.11.8(react@18.2.0)
+      '@sanity/incompatible-plugin': 1.0.4(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      sanity: 3.57.4(@types/node@20.11.5)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.13)
+    transitivePeerDependencies:
+      - react-dom
     dev: false
 
   /sanity-plugin-utils@1.6.5(@sanity/ui@2.8.9)(react-dom@18.2.0)(react-fast-compare@3.2.2)(react@18.2.0)(rxjs@7.8.1)(sanity@3.57.4)(styled-components@6.1.13):

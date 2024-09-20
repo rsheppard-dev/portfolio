@@ -4,6 +4,9 @@ export default defineType({
 	name: 'about',
 	title: 'About Page',
 	type: 'document',
+	options: {
+		singleton: true, // Identify this document as a singleton
+	},
 	fields: [
 		defineField({
 			name: 'content',
