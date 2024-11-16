@@ -12,7 +12,7 @@ import Paginatation from '../../../components/Paginatation';
 const Projects = () => {
 	const [page, setPage] = useState(1);
 
-	const resultsPerPage = 1;
+	const resultsPerPage = 5;
 
 	const {
 		isLoading,
