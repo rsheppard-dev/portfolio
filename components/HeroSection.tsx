@@ -10,7 +10,7 @@ const HeroSection = () => {
 			<div className='flex flex-col md:flex-row justify-between gap-10'>
 				<div className='w-full lg:w-3/5'>
 					<h1 className='balance text-center md:text-start mb-10 text-4xl md:text-5xl text-light font-primary font-bold subpixel-antialiased leading-snug md:leading-snug'>
-						I am a full-stack developer that loves building awesome web
+						I am a full-stack developer that loves to building awesome web
 						applications
 					</h1>
 
