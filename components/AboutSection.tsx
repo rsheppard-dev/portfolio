@@ -19,7 +19,7 @@ const AboutSection = async () => {
 						/>
 					</div>
 
-					<div className='prose max-w-none w-full prose-h2:text-primary-300 prose-h2:font-primary prose-h2:font-bold prose-h2:text-2xl prose-p:font-secondary space-y-4'>
+					<div className='prose prose-li:font-secondary max-w-none w-full prose-h2:text-primary-300 prose-h2:font-primary prose-h2:font-bold prose-h2:text-2xl prose-p:font-secondary space-y-4'>
 						<PortableText value={content} />
 					</div>
 				</div>
